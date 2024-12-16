@@ -1,0 +1,919 @@
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Navigation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: "#8B5CF6",
+                DEFAULT: "#022358",
+              dark: "#6D28  D9",
+              },
+            },
+
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              scroll: "scroll 20s linear infinite",
+            },
+            keyframes: {
+              scroll: {
+                "0%": { transform: "translateX(100%)" },
+                "100%": { transform: "translateX(-100%)" },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+            },
+            fontFamily: {
+              manrope: ['"Manrope"', "sans-serif"],
+              quicksand: ["Quicksand", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
+  </head>
+  <body class="transition-colors duration-300 dark:bg-gray-90">
+    <div class="floating-shape shape1"></div>
+    <div class="floating-shape shape2"></div>
+    <div class="floating-shape shape3"></div>
+    <div class="floating-shape shape4"></div>
+    <!-- Nav section-->
+    <nav
+      class="dark:bg-gray-800 shadow-sm fixed w-full top-0 z-50 transition-colors duration-300 backdrop-blur-md font-quicksand"
+    >
+      <div class="max-w-7xl mx-auto px-2 py-2 sm:px-5 lg:px-7">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <a href="" class="text-xl font-semibold text-black dark:text-white"
+              >Logo</a
+            >
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8 text-md">
+            <a href="#" class="text-[#022358] dark:text-purple-400 font-medium"
+              >Accueil</a
+            >
+            <a
+              href="#"
+              class="text-[#022358] dark:text-gray-300 hover:text-blue-900 dark:hover:text-purple-400 transition-colors"
+              >Formation</a
+            >
+            <a
+              href="#"
+              class="text-[#022358] dark:text-gray-300 hover:text-blue-900 dark:hover:text-purple-400 transition-colors"
+              >Services</a
+            >
+            <a
+              href="#"
+              class="text-[#022358] dark:text-gray-300 hover:text-blue-900 dark:hover:text-purple-400 transition-colors"
+              >A Propos</a
+            >
+          </div>
+
+          <!-- Dark Mode Toggle & CTA Button -->
+          <div class="hidden md:flex items-center space-x-4">
+            <!-- Dark Mode Toggle -->
+            <button
+              id="theme-toggle"
+              class="p-2 rounded text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700"
+            >
+              <!-- Sun icon -->
+              <svg
+                id="theme-toggle-light-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                ></path>
+              </svg>
+              <!-- Moon icon -->
+              <svg
+                id="theme-toggle-dark-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                ></path>
+              </svg>
+            </button>
+
+            <!-- CTA Button -->
+            <a
+              href="#"
+              class="bg-[#022358] hover:bg-blue-900 text-white px-5 py-3 rounded-3xl transition-colors"
+            >
+              Demandez une consultation gratuite
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center space-x-2">
+            <!-- Dark Mode Toggle for Mobile -->
+            <button
+              id="theme-toggle-mobile"
+              class="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700"
+            >
+              <!-- Sun icon -->
+              <svg
+                id="theme-toggle-light-icon-mobile"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                ></path>
+              </svg>
+              <!-- Moon icon -->
+              <svg
+                id="theme-toggle-dark-icon-mobile"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                ></path>
+              </svg>
+            </button>
+
+            <button
+              id="menu-toggle"
+              class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 focus:outline-none"
+            >
+              <svg
+                id="menu-icon"
+                class="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+              <svg
+                id="close-icon"
+                class="h-6 w-6 hidden"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-800">
+          <a
+            href="#"
+            class="block px-3 py-2 text-purple-600 dark:text-purple-400 font-medium"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400"
+            >About</a
+          >
+          <a
+            href="#"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400"
+            >Services</a
+          >
+          <a
+            href="#"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400"
+            >Portfolios</a
+          >
+          <a
+            href="#"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400"
+            >Blog</a
+          >
+          <a
+            href="#"
+            class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400"
+            >Contact</a
+          >
+          <button
+            class="mt-4 w-full bg-purple-600 dark:bg-purple-500 text-white px-6 py-2 rounded-full hover:bg-purple-700 dark:hover:bg-purple-600 transition-colors duration-300 flex items-center justify-center"
+          >
+            Let's Talk
+            <span class="ml-2">→</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="z-20 hero-gradient sticky top-0 min-h-screen pt-30 px-4 sm:px-6 lg:px-8"
+    >
+      <!-- Floating Elements -->
+        <div class="groupx">
+            <span></span>
+            <span></span>
+            <img src="./assets/images/A-ball-of-paper-8-1 2.png" alt="">
+
+        </div>
+      <!--
+        <div class="gradient-left-top"></div>
+        <div class="gradient-right"></div>
+        -->
+      <!-- Content -->
+      <div class="relative flex flex-col justify-center items-center h-screen">
+        <!--
+         <div class="hero-spiral z-10">
+            <img class="w-[500px]" src="./assets/images/heroImg.png" alt="" />
+        </div>
+        -->
+        <div class="flex justify-center flex-col items-center z-20 mt-10">
+          <img src="./assets/images/heroLogo.png" alt="" />
+          <h1
+            class="text-5xl md:text-7xl font-bold text-[#022358] mb-8 font-quicksand"
+          >
+            Boostez votre présence<br /><span class="text-blue-800"
+              >digitale avec CreaSage</span
+            >
+          </h1>
+          <p
+            class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto text-center font-manrope"
+          >
+            Création de contenu sur mesure, formations<br />avancées et
+            stratégies gagnantes
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center font-manrope"
+          >
+            <a
+              href="#services"
+              class="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors duration-300"
+            >
+              Decouvrez nos services
+              <svg
+                class="ml-2 w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </a>
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center px-8 py-3 bg-transparent text-primary rounded-full hover:bg-gray-50 transition-colors duration-300 border border-primary"
+            >
+              Decouvrez nos services
+              <svg
+                class="ml-2 w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+       <section class="">
+        <img class="" src="./assets/images/scale.png" alt="">
+    </section>
+-->
+
+    <!-- Scroll bar-->
+
+    <section class="relative z-40 w-full font-quicksand">
+      <div class="scrolling-container bgscroll relative w-full py-7 text-white">
+        <div class="scrolling-text flex justify-center items-center">
+          <span class="flex justify-center items-center font-bold text-2xl"
+            ><img
+              class="w-full max-w-6 mr-9"
+              src="./assets/images/Frame.png"
+              alt=""
+            />
+            Digital Marketing</span
+          >
+          <span class="flex justify-center items-center font-bold text-2xl"
+            ><img
+              class="w-full max-w-6 mr-9"
+              src="./assets/images/Frame.png"
+              alt=""
+            />
+            Digital Marketing</span
+          >
+          <span class="flex justify-center items-center font-bold text-2xl"
+            ><img
+              class="w-full max-w-6 mr-9"
+              src="./assets/images/Frame.png"
+              alt=""
+            />
+            Digital Marketing</span
+          >
+          <span class="flex justify-center items-center font-bold text-2xl"
+            ><img
+              class="w-full max-w-6 mr-9"
+              src="./assets/images/Frame.png"
+              alt=""
+            />
+            Digital Marketing</span
+          >
+          <span class="flex justify-center items-center font-bold text-2xl"
+            ><img
+              class="w-full max-w-6 mr-9"
+              src="./assets/images/Frame.png"
+              alt=""
+            />
+            Digital Marketing</span
+          >
+          <span class="flex justify-center items-center font-bold text-2xl"
+            ><img
+              class="w-full max-w-6 mr-9"
+              src="./assets/images/Frame.png"
+              alt=""
+            />
+            Digital Marketing</span
+          >
+          <span class="flex justify-center items-center font-bold text-2xl"
+            ><img
+              class="w-full max-w-6 mr-9"
+              src="./assets/images/Frame.png"
+              alt=""
+            />
+            Digital Marketing</span
+          >
+          <span class="flex justify-center items-center font-bold text-2xl"
+            ><img
+              class="w-full max-w-6 mr-9"
+              src="./assets/images/Frame.png"
+              alt=""
+            />
+            Digital Marketing</span
+          >
+          <span class="flex justify-center items-center font-bold text-2xl"
+            ><img
+              class="w-full max-w-6 mr-9"
+              src="./assets/images/Frame.png"
+              alt=""
+            />
+            Digital Marketing</span
+          >
+          <span class="flex justify-center items-center font-bold text-2xl"
+            ><img
+              class="w-full max-w-6 mr-9"
+              src="./assets/images/Frame.png"
+              alt=""
+            />
+            Digital Marketing</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section-->
+
+    <section
+      class="min-h-screen relative z-40 py-24 px-8 bg-white overflow-hidden"
+    >
+      <div class="flex flex-col gap-5 max-w-7xl mx-auto mb-12">
+        <div class="flex gap-3 items-center font-manrope ">
+          <img src="./assets/images/Frame.png" alt="" />
+          <h4
+            class="section-label text-blue-500 font-semibold text-sm uppercase tracking-wider"
+          >
+            About
+          </h4>
+        </div>
+        <div class="flex justify-between items-center max-w-7xl">
+          <h1
+            class="text-[#022358] text-3xl md:text-4xl uppercase font-quicksand"
+          >
+            About <span class="text-primary-light">Us</span>
+          </h1>
+        </div>
+      </div>
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+      >
+        <!-- Visual Section -->
+        <div class="relative aspect-square flex justify-center items-center">
+          <div class="relative ">
+            <div class=" absolute -left-16 w-full  bottom-[-5%] space-x-0"> <img src="./assets/images/dot.png" alt=""></div>
+            <img
+              src="./assets/images/nbout.png"
+              alt=""
+              class="w-full h-full object-cover  relative z-10"
+            />
+          </div>
+        </div>
+        <!-- Content Section -->
+        <div class="text-blue-900">
+          <h2
+            class="text-4xl md:text-5xl font-bold leading-tight mb-6 font-quicksand"
+          >
+            Industry ripe <br />for
+            <span class="text-[#297DF0]">disruption</span>
+          </h2>
+          <p class="text-lg opacity-80 leading-relaxed mb-6 font-manrope">
+            Real estate is widely considered to be the asset class responsible
+            for generating wealth for the most number of people. It has,
+            however, not been disrupted and updated for the modern world in a
+            long time.
+          </p>
+          <div class="w-12 h-1 bg-blue-400 my-8"></div>
+          <p class="text-xl font-medium text-[#022358] font-manrope">
+            We are solving some of the biggest challenges that plague the
+            industry right now.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Section-->
+
+    <section class="services-section z-40 bg-white relative py-24">
+      <div class="services-container max-w-7xl mx-auto px-8">
+        <div class="flex gap-3 items-center mb-4 font-m">
+          <img src="./assets/images/Frame.png" alt="" />
+          <span
+            class="section-label text-blue-500 font-semibold text-sm uppercase tracking-wider font-manrope"
+          >
+            MY SERVICES
+          </span>
+        </div>
+        <div class="services-header flex justify-between items-center mb-12">
+          <h2 class="text-3xl md:text-4xl text-blue-900 font-quicksand">
+            HERE'S HOW <span class="text-primary-light">I CAN </span> HELP!
+          </h2>
+          <div class="nav-buttons flex gap-4">
+            <button
+              class="nav-btn w-12 h-12 rounded-full border-2 border-blue-100 bg-transparent flex items-center justify-center text-blue-900 hover:bg-blue-900 hover:text-white hover:border-blue-900 transition-all"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              class="nav-btn w-12 h-12 rounded-full border-2 border-blue-100 bg-transparent flex items-center justify-center text-blue-900 hover:bg-blue-900 hover:text-white hover:border-blue-900 transition-all"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="services-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <div
+            class="service-card bg-[#f6f3fc] backdrop-blur-md p-8 rounded-xl shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
+          >
+            <div
+              class="service-icon w-16 h-16 bg-primary-light text-white rounded-full flex items-center justify-center mb-6"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M9 9h6M9 13h6M9 17h6" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900 mb-4 font-quicksand">
+              Keyword Research
+            </h3>
+            <p class="text-blue-900/70 mb-6 font-manrope">
+              Keyword research is the design process of identifying and
+              analyzing search terms that people use in search engines. This
+              fundamental SEO practice.
+            </p>
+            <div
+              class="card-arrow absolute bottom-8 right-8 text-blue-500 transition-transform"
+            >
+              <svg
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M7 17l9.2-9.2M17 17V7H7" />
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="service-card bg-[#f6f3fc] backdrop-blur-md p-8 rounded-xl shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
+          >
+            <div
+              class="service-icon w-16 h-16 bg-primary-light text-white rounded-full flex items-center justify-center mb-6"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M9 9h6M9 13h6M9 17h6" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900 mb-4 font-quicksand">
+              Keyword Research
+            </h3>
+            <p class="text-blue-900/70 mb-6 font-manrope">
+              Keyword research is the design process of identifying and
+              analyzing search terms that people use in search engines. This
+              fundamental SEO practice.
+            </p>
+            <div
+              class="card-arrow absolute bottom-8 right-8 text-blue-500 transition-transform"
+            >
+              <svg
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M7 17l9.2-9.2M17 17V7H7" />
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="service-card bg-[#f6f3fc] backdrop-blur-md p-8 rounded-xl shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
+          >
+            <div
+              class="service-icon w-16 h-16 bg-primary-light text-white rounded-full flex items-center justify-center mb-6"
+            >
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M9 9h6M9 13h6M9 17h6" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-blue-900 mb-4 font-quicksand">
+              Keyword Research
+            </h3>
+            <p class="text-blue-900/70 mb-6 font-manrope">
+              Keyword research is the design process of identifying and
+              analyzing search terms that people use in search engines. This
+              fundamental SEO practice.
+            </p>
+            <div
+              class="card-arrow absolute bottom-8 right-8 text-blue-500 transition-transform"
+            >
+              <svg
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M7 17l9.2-9.2M17 17V7H7" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Repeat similar service-card structure for additional cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- client Section-->
+
+   <section class="bg-gradient-to-br client-section from-[#F6F3FC] w-full to-blue-50  py-24 rounded-3xl relative bg-white z-40">
+    <div class="flex flex-col gap-5 max-w-7xl mx-auto px-8 mb-12">
+      <div class="flex gap-3 items-center font-manrope">
+        <img src="./assets/images/Frame.png" alt="" />
+        <h4
+          class="section-label text-blue-500 font-semibold text-sm uppercase tracking-wider"
+        >
+          Temoignagest
+        </h4>
+      </div>
+      <div class="flex justify-between items-center max-w-7xl">
+        <h1
+          class="text-[#022358] text-3xl md:text-4xl uppercase font-quicksand"
+        >
+          Our <span class="text-primary-light">Clients</span>
+        </h1>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto flex items-center justify-center px-8">
+        <!-- Slider main container -->
+        <div class="swiper testimonial-slider">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-2xl px-14 py-10 mb-3  shadow-lg">
+                        <p class="text-gray-600 mb-6">
+                            Le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Mohamed Chokri</h3>
+                                <p class="text-gray-600">General Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-2xl px-14 py-10 mb-3  shadow-lg">
+                        <p class="text-gray-600 mb-6">
+                            Le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Sarah Johnson</h3>
+                                <p class="text-gray-600">Product Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide">
+                    <div class="bg-white rounded-2xl px-14 py-10 mb-3  shadow-lg">
+                        <p class="text-gray-600 mb-6">
+                            Le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Alex Chen</h3>
+                                <p class="text-gray-600">Tech Lead</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="bg-white rounded-2xl px-14 py-10 mb-3  shadow-lg">
+                      <p class="text-gray-600 mb-6">
+                          Le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans
+                      </p>
+                      <div class="flex items-center gap-4">
+                          <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+                          <div>
+                              <h3 class="font-semibold text-gray-800">Alex Chen</h3>
+                              <p class="text-gray-600">Tech Lead</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            
+            <!-- Navigation buttons -->
+           
+            
+            <!-- Pagination -->
+          <!-- <div class="swiper-pagination"></div>-->
+        </div>
+    </div>  
+   </section>
+    <!-- Formation Section-->
+
+   <section class="courses-section">
+    <div class="courses-container">
+      <div class="flex flex-col gap-5 max-w-7xl mx-auto  mb-12">
+        <div class="flex gap-3 items-center font-manrope">
+          <img src="./assets/images/Frame.png" alt="" />
+          <h4
+            class="section-label text-blue-500 font-semibold text-sm uppercase tracking-wider"
+          >
+          OUR COURSES
+          </h4>
+        </div>
+        <div class="flex justify-between items-center max-w-7xl">
+          <h1
+            class="text-[#022358] text-3xl md:text-4xl uppercase font-quicksand"
+          >
+          Featured <span class="text-primary-light"> Learning Paths
+            </span>
+          </h1>
+        </div>
+      </div>
+        
+        <div class="courses-grid">
+            <!-- Course Card 1 -->
+            <div class="course-card">
+                <div class="course-banner" style="background: linear-gradient(45deg, #4338CA, #1E40AF)">
+                    <div class="banner-content">
+                        <span class="level-tag">intermediate</span>
+                        <button class="favorite-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                        </button>
+                        <div class="tech-icons">
+                            <span class="tech-icon">HTML</span>
+                            <span class="tech-icon">CSS</span>
+                            <span class="tech-icon">JS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <h3>Web Development Fundamentals Course</h3>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                            1 Lesson
+                        </div>
+                        <div class="meta-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                            20h 30m
+                        </div>
+                    </div>
+                    <div class="instructor">
+                        <img src="https://softivuslab.com/wp/edufast/wp-content/uploads/2024/06/8.jpg" alt="Instructor" class="instructor-avatar">
+                        <span class="instructor-name">John Doe</span>
+                        <span class="rating">⭐ 4.8</span>
+                    </div>
+                    <div class="course-footer">
+                        <a href="#" class="btn-enroll">Enroll Now</a>
+                        <span class="price">Free</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="course-card">
+                <div class="course-banner" style="background: linear-gradient(45deg, #7C3AED, #5B21B6)">
+                    <div class="banner-content">
+                        <span class="level-tag">expert</span>
+                        <button class="favorite-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <h3>UX/UI Design Professional</h3>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                            9+ Hours
+                        </div>
+                    </div>
+                    <div class="instructor">
+                        <img src="https://softivuslab.com/wp/edufast/wp-content/uploads/2024/07/5-1.jpg" alt="Instructor" class="instructor-avatar">
+                        <span class="instructor-name">Sarah Smith</span>
+                        <span class="rating">⭐ 4.9</span>
+                    </div>
+                    <div class="course-footer">
+                        <a href="#" class="btn-enroll">Enroll Now</a>
+                        <span class="price">$99</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="course-card">
+                <div class="course-banner" style="background: linear-gradient(45deg, #3B82F6, #1D4ED8)">
+                    <div class="banner-content">
+                        <span class="level-tag">intermediate</span>
+                        <button class="favorite-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <h3>Flutter Mobile Development</h3>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                            0 Lesson
+                        </div>
+                        <div class="meta-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                            20h 30m
+                        </div>
+                    </div>
+                    <div class="instructor">
+                        <img src="https://softivuslab.com/wp/edufast/wp-content/uploads/2024/07/4-1.jpg" alt="Instructor" class="instructor-avatar">
+                        <span class="instructor-name">Mike Johnson</span>
+                        <span class="rating">⭐ 4.7</span>
+                    </div>
+                    <div class="course-footer">
+                        <a href="#" class="btn-enroll">Enroll Now</a>
+                        <div class="price-container">
+                            <span class="price-original">$89</span>
+                            <span class="price">$79</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- faq-->
+  <section class="bg-gradient-to-br from-gray-100 to-purple-100 py-24 relative z-40 ">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold mb-12 text-gray-900 font-quicksand">Frequently asked questions</h1>
+        
+        <div class="space-y-4 font-manrope" id="faq-container">
+            <!-- FAQ items will be inserted here by JavaScript -->
+        </div>
+    </div>
+  </section>
+
+    <!-- footer-->
+  <section></section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src=".js/faq-data.js"></script>
+    <script src=".js/faq.js"></script>
+  </body>
+</html>
