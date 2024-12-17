@@ -124,13 +124,16 @@
 
             <!-- CTA Button -->
          
-          
-            <button class="button">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            <button class="inline-flex items-center gap-2 px-4 py-2 text-lg font-medium text-purple-500 bg-white border border-gray-200 rounded-full shadow-md transition-all hover:bg-gray-50 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-purple-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-purple-400 dark:text-purple-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
-              Start for free
-          </button>
+              Demandez une consultation gratuite
+            </button>
+            
+            
+          
+
           </div>
 
           <!-- Mobile menu button -->
@@ -274,7 +277,7 @@
           </p>
           <img src="./assets/images/heroLogo.png" alt="" />
           <h1
-            class="text-5xl md:text-7xl font-bold text-[#022358] dark:text-white mb-8 font-quicksand text-center"
+            class="text-4xl md:text-7xl font-bold text-[#022358] dark:text-white mb-8 font-quicksand text-center"
           >
             Boostez votre présence<br /><span class="text-blue-800 dark:text-blue-400"
               >digitale avec CreaSage</span
@@ -424,7 +427,7 @@
       class="min-h-screen relative z-30 py-24 px-8 bg-white dark:bg-gray-950 overflow-hidden"
     >
 
-      <div class="flex flex-col gap-5 max-w-7xl mx-auto mb-12">
+      <div class="flex flex-col gap-5 max-w-7xl mx-auto mb-4">
         <div class="flex gap-3 items-center font-manrope ">
           <img src="./assets/images/Frame.png" alt="" />
           <h4
@@ -893,12 +896,22 @@
 
   <!-- faq-->
   <section class="bg-gradient-to-br from-gray-100 to-purple-100 dark:from-gray-950 dark:to-gray-900 py-24 relative z-30">
-    <div class="max-w-7xl mx-auto">
-        <h1 class="text-4xl font-bold mb-12 text-gray-900 dark:text-white text-center font-quicksand">Frequently asked questions</h1>
-        
-        <div class="space-y-4 font-manrope" id="faq-container">
-            <!-- FAQ items will be inserted here by JavaScript -->
+    <div class="max-w-7xl mx-auto flex flex-col items-start">
+      <div class="w-full flex flex-row justify-between items-center">
+        <div class="w-1/2 items-start flex flex-col">
+          <h1 class="text-4xl font-bold mb-12 text-gray-900 dark:text-white text-center font-quicksand">Frequently asked questions</h1>
+
+          <div class="space-y-4 font-manrope w-[90%]" id="faq-container">
+              <!-- FAQ items will be inserted here by JavaScript -->
+          </div>
         </div>
+        <div class="w-1/2">
+          <img class="w-full h-full" src="./assets/images/home-img-2.webp" alt="">
+        </div>
+      </div>
+        
+        </div>
+      </div>
     </div>
   </section>
 
