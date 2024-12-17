@@ -592,3 +592,48 @@ footer input::placeholder {
     }
 }
 
+.highlight {
+    background: linear-gradient(120deg, #4ade8080 0%, #4ade8080 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.5em;
+    background-position: 0 88%;
+}
+
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    background: linear-gradient(to right, #ffffff, #e9defa);
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #7c3aed;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06),
+        0 0 0 4px rgba(124, 58, 237, 0.1);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 8px -1px rgba(0, 0, 0, 0.1),
+        0 4px 6px -1px rgba(0, 0, 0, 0.06),
+        0 0 0 4px rgba(124, 58, 237, 0.2);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.button svg {
+    width: 20px;
+    height: 20px;
+}

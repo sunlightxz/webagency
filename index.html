@@ -70,8 +70,8 @@
           </div>
 
           <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center space-x-8 text-md">
-            <a href="#" class="text-[#022358] dark:text-purple-400 font-medium"
+          <div class="hidden font-semibold md:flex items-center space-x-8 text-md">
+            <a href="#" class="text-[#022358] dark:text-purple-400 font-semibold"
               >Accueil</a
             >
             <a
@@ -123,12 +123,14 @@
             </button>
 
             <!-- CTA Button -->
-            <a
-              href="#"
-              class="bg-[#022358] hover:bg-blue-900 text-white font-medium px-6 py-4 rounded-3xl transition-colors"
-            >
-              Demandez une consultation gratuite
-            </a>
+         
+          
+            <button class="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              Start for free
+          </button>
           </div>
 
           <!-- Mobile menu button -->
@@ -279,7 +281,7 @@
             >
           </h1>
           <p
-            class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto text-center font-manrope"
+            class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto text-center font-manrope"
           >
             Création de contenu sur mesure, formations<br />avancées et
             stratégies gagnantes
@@ -416,9 +418,6 @@
       </div>
     </section>
     
-    
-    
-
     <!-- About Section-->
 
     <section
@@ -436,7 +435,7 @@
         </div>
         <div class="flex justify-between items-center max-w-7xl">
           <h1
-            class="text-[#022358] dark:text-white text-3xl md:text-4xl uppercase font-quicksand"
+            class="text-[#022358] dark:text-white font-semibold text-3xl md:text-4xl uppercase font-quicksand"
           >
 
             About <span class="text-primary-light">Us</span>
@@ -444,27 +443,27 @@
         </div>
       </div>
       <div
-        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
       >
         <!-- Visual Section -->
         <div class="relative aspect-square flex justify-center items-center">
 
           <div class="relative ">
-            <div class=" absolute -left-16 w-full  bottom-[-5%] space-x-0"> <img src="./assets/images/dot.png" alt=""></div>
+            <div class=" absolute left-0 bottom-[-50px] w-1/2 z-20"> <img class="w-full h-auto" src="./assets/images/sq2.jpg" alt=""></div>
             <img
-              src="./assets/images/imagex.png"
+              src="./assets/images/sq1.jpg"
               alt=""
-              class="w-full h-full object-cover  relative z-10"
+              class="w-[75%] object-cover  relative z-10 ml-[25%]"
             />
           </div>
         </div>
         <!-- Content Section -->
-        <div class="text-blue-900 dark:text-white">
+        <div class="text-black dark:text-white">
           <h2
             class="text-4xl md:text-5xl font-bold leading-tight mb-6 font-quicksand"
           >
             Industry ripe <br />for
-            <span class="text-[#297DF0] dark:text-blue-400">disruption</span>
+            <span class="text-[#297DF0] dark:text-blue-400 highlight"> disruption</span>
           </h2>
           <p class="text-lg opacity-80 leading-relaxed mb-6 font-manrope dark:text-gray-300">
             Real estate is widely considered to be the asset class responsible
@@ -495,7 +494,7 @@
           </span>
         </div>
         <div class="services-header flex justify-between items-center mb-12">
-          <h2 class="text-3xl md:text-4xl text-blue-900 dark:text-white font-quicksand">
+          <h2 class="text-3xl md:text-4xl text-black font-semibold  dark:text-white font-quicksand">
             HERE'S HOW <span class="text-primary-light">I CAN </span> HELP!
           </h2>
           <div class="nav-buttons flex gap-4">
@@ -655,6 +654,15 @@
       </div>
     </section>
 
+  <!-- Image Section-->
+
+    <section class="image-section  section-gradient z-30 bg-white dark:bg-gray-950 relative py-24">
+        <div class="grid grid-cols-1  sm:grid-cols-3">
+          <img class="px-4 rounded-lg" src="./assets/images/course1.webp" alt="">
+          <img class="px-4 rounded-lg" src="./assets/images/course2.webp" alt="">
+          <img class="px-4 rounded-lg" src="./assets/images/course3.webp" alt="">
+        </div>
+    </section>
 
     <!-- client Section-->
 
@@ -663,14 +671,14 @@
       <div class="flex gap-3 items-center font-manrope">
         <img src="./assets/images/Frame.png" alt="" />
         <h4
-          class="section-label text-blue-500 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider"
+          class="section-label  text-blue-500 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider"
         >
           Temoignagest
         </h4>
       </div>
       <div class="flex justify-between items-center max-w-7xl">
         <h1
-          class="text-[#022358] dark:text-white text-3xl md:text-4xl uppercase font-quicksand"
+          class="text-[#022358] dark:text-white font-semibold  text-3xl md:text-4xl uppercase font-quicksand"
         >
           Our <span class="text-primary-light">Clients</span>
         </h1>
@@ -761,14 +769,14 @@
         <div class="flex gap-3 items-center font-manrope">
           <img src="./assets/images/Frame.png" alt="" />
           <h4
-            class="section-label text-blue-500 font-semibold text-sm uppercase tracking-wider"
+            class="section-label text-blue-500  font-semibold text-sm uppercase tracking-wider"
           >
           OUR COURSES
           </h4>
         </div>
         <div class="flex justify-between items-center max-w-7xl">
           <h1
-            class="text-[#022358] dark:text-white text-3xl md:text-4xl uppercase font-quicksand"
+            class="text-[#022358] dark:text-white font-semibold  text-3xl md:text-4xl uppercase font-quicksand"
           >
           Featured <span class="text-primary-light"> Learning Paths
             </span>
@@ -779,7 +787,7 @@
         <div class="courses-grid">
             <!-- Course Card 1 -->
             <div class="course-card dark:bg-gray-800 dark:text-white">
-              <div class="course-banner" style="background: linear-gradient(45deg, #7C3AED, #5B21B6)">
+              <div class="course-banner" style="background: url('./assets/images/course1.webp')">
                   <div class="banner-content">
                       <span class="level-tag">expert</span>
                       <button class="favorite-btn">
@@ -813,7 +821,7 @@
 
             <!-- Course Card 2 -->
             <div class="course-card dark:bg-gray-800 dark:text-white">
-                <div class="course-banner" style="background: linear-gradient(45deg, #7C3AED, #5B21B6)">
+                <div class="course-banner" style="background: url('./assets/images/course2.webp')">
                     <div class="banner-content">
                         <span class="level-tag">expert</span>
                         <button class="favorite-btn">
@@ -847,7 +855,7 @@
 
             <!-- Course Card 3 -->
             <div class="course-card dark:bg-gray-800 dark:text-white">
-              <div class="course-banner" style="background: linear-gradient(45deg, #7C3AED, #5B21B6)">
+              <div class="course-banner" style="background: url('./assets/images/course3.webp') ;background-position:center;">
                   <div class="banner-content">
                       <span class="level-tag">expert</span>
                       <button class="favorite-btn">
@@ -909,8 +917,8 @@
                 </svg>
             </div>
         </div>
-        <h3 class="md:text-xl text-base  my-5">Let's Collaborate</h3>
-        <h2 class="md:text-[90px] text-[55px] font-quicksand font-medium  text-center leading-tigh text-[#022358] dark:text-white">Let’s discuss <br> <span class="text-blue-800 dark:text-blue-400">your ideas</span></h2>
+        <h3 class="md:text-xl text-base font-semibold   my-5">Let's Collaborate</h3>
+        <h2 class="md:text-[90px] text-[55px] font-quicksand font-semibold  text-center leading-tigh text-[#022358] dark:text-white">Let’s discuss <br> <span class="text-blue-800 dark:text-blue-400">your ideas</span></h2>
         
       </div>
     </div>
