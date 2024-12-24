@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const contimeline = gsap.timeline({
     scrollTrigger: {
-      trigger: "#about",
+      trigger: "#about-content",
       start: "top bottom",
       end: "bottom bottom",
       scrub: 2,
