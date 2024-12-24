@@ -246,60 +246,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Ensure you include ScrollTrigger and GSAP libraries
-
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
   const contimeline = gsap.timeline({
     scrollTrigger: {
-      trigger: "#about",
+      trigger: "#about-content",
       start: "top bottom",
-      end: "bottom bottom",
+      end: "bottom center",
       scrub: 2,
-      markers :true ,
+      markers :true 
+      // Removed pin: true to prevent the pinning effect
     },
   });
 
-  // Animate each `content-section` sequentially
+  // Content animations remain the same
   contimeline
-  .from("#about-subhead", {
-    opacity: 0,
-    x: -100,
-    duration: 1,
-  })
+    .from("#about-subhead", {
+      opacity: 0,
+      x: -100,
+      duration: 0.5,
+    })
     .from("#about-title", {
       opacity: 0,
       x: -100,
-      duration: 1,
+      duration: 0.5,
     })
     .from("#about-p", {
       opacity: 0,
       x: -100,
       duration: 1,
-    }, "-=0.3") // Starts this animation slightly earlier
+    }, "-=0.3")
     .from("#about-check", {
       opacity: 0,
       x: -100,
       duration: 1,
     }, "-=0.3")
-   
     .from("#about-btn", {
       opacity: 0,
       x: -100,
       duration: 1,
     }, "-=1.3");
 
-    const visualTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top center",
-        end: "bottom center",
-        scrub: 2,
-        markers: true,
-      },
-    });
-  
-    visualTimeline
+  const visualTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#about-visual",
+      start: "top bottom",
+      end: "bottom center",
+      scrub: 2,
+      markers :true ,
+      // Removed pin: true to prevent the pinning effect
+    },
+  });
+
+  visualTimeline
     .from("#lg-about", {
       scale: 0.3,
       opacity: 0,
@@ -313,8 +313,8 @@ document.addEventListener("DOMContentLoaded", () => {
         opacity: 0,
         duration: 1.4,
         ease: "power2.out",
-        x: -200 ,
-      } // Overlap the animations slightly
+        x: -200,
+      }
     )
     .from(
       "#smimg-about",
@@ -325,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power2.out",
         x: -100,
       },
-      "-=0.8"
+      "-=1"
     );
 });
 
