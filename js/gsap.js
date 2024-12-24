@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     topText: document.querySelector(".font-manrope.text-primary"),
     logo: document.querySelector('img[src*="heroLogo"]'),
     heading: document.querySelector("h1"),
-    subText: document.querySelector(".text-lg.md\\:text-xl"),
+    subText: document.querySelector(".subtext-hero"),
     buttons: document.querySelectorAll(".flex.flex-col.sm\\:flex-row a"),
   };
 
@@ -169,3 +169,183 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
+
+  
+
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+    
+    gsap.fromTo(
+      ".kkk",
+      { opacity: 0, x: -100 }, // Start values
+      { 
+        opacity: 1, 
+        x: 0, 
+        duration: 1, 
+        backgroundPosition: "-200px -200px", // End values
+        scrollTrigger: {
+          trigger: ".kkk",
+          start: "top 80%",
+          end: "bottom 20%", // Define the animation duration based on the scroll range
+          scrub: true, // Allows the animation to follow the scroll
+          toggleActions: "play none none none"
+        }
+      }
+    );
+
+    gsap.fromTo(
+      ".kkks",
+      { opacity: 0, x: -300, }, // Start values
+      { 
+        opacity: 1, 
+        x: 0, 
+        duration: 1, 
+        backgroundPosition: "200px 200px", // End values
+        scrollTrigger: {
+          trigger: ".kkks",
+          start: "top 80%",
+          end: "bottom 20%", // Define the animation duration based on the scroll range
+          scrub: true, // Allows the animation to follow the scroll
+          toggleActions: "play none none none"
+        }
+      }
+    );
+
+  // Main content animation - triggers once when in viewport
+  gsap.from(".seo-content", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+          trigger: ".seo-content",
+          start: "top 80%", 
+          toggleActions: "play none none none", 
+          once: true 
+      }
+  });
+
+  // Button hover animation
+  const button = document.querySelector('a[href="#consultation"]');
+  button.addEventListener('mouseenter', () => {
+      gsap.to(button, {
+          scale: 1.05,
+          duration: 0.3
+      });
+  });
+  
+  button.addEventListener('mouseleave', () => {
+      gsap.to(button, {
+          scale: 1,
+          duration: 0.3
+      });
+  });
+});
+
+
+
+
+// Ensure you include ScrollTrigger and GSAP libraries
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const contimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#about",
+      start: "top bottom",
+      end: "bottom bottom",
+      scrub: 2,
+      markers :true ,
+    },
+  });
+
+  // Animate each `content-section` sequentially
+  contimeline
+  .from("#about-subhead", {
+    opacity: 0,
+    x: -100,
+    duration: 1,
+  })
+    .from("#about-title", {
+      opacity: 0,
+      x: -100,
+      duration: 1,
+    })
+    .from("#about-p", {
+      opacity: 0,
+      x: -100,
+      duration: 1,
+    }, "-=0.3") // Starts this animation slightly earlier
+    .from("#about-check", {
+      opacity: 0,
+      x: -100,
+      duration: 1,
+    }, "-=0.3")
+   
+    .from("#about-btn", {
+      opacity: 0,
+      x: -100,
+      duration: 1,
+    }, "-=1.3");
+
+    const visualTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#about-visual",
+        start: "top center",
+        end: "bottom center",
+        scrub: 2,
+        markers: true,
+      },
+    });
+  
+    visualTimeline
+    .from("#lg-about", {
+      scale: 0.3,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+    })
+    .from(
+      "#img-about",
+      {
+        scale: 0.3,
+        opacity: 0,
+        duration: 1.4,
+        ease: "power2.out",
+        x: -200 ,
+      } // Overlap the animations slightly
+    )
+    .from(
+      "#smimg-about",
+      {
+        scale: 0.3,
+        opacity: 0,
+        duration: 1.4,
+        ease: "power2.out",
+        x: -100,
+      },
+      "-=0.8"
+    );
+});
+
+  
+
+
+
+
+  // Add hover animation for button
+  const button = document.querySelector('button');
+  button.addEventListener('mouseenter', () => {
+      gsap.to(button, {
+          scale: 1.05,
+          duration: 0.3
+      });
+  });
+  
+  button.addEventListener('mouseleave', () => {
+      gsap.to(button, {
+          scale: 1,
+          duration: 0.3
+      });
+  });

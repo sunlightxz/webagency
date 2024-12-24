@@ -663,7 +663,6 @@ footer input::placeholder {
 }
 
 
-
 .image-section img {
     position: absolute;
     top: -8%;
@@ -687,16 +686,20 @@ footer input::placeholder {
 }
 
 .kkks{
-    background-image: url("../assets/images/Social-Media-Marketing-How-BG.webp");
     background-position: 730px 300px;
     background-repeat: no-repeat;
-    background-size: 540px auto;
-    opacity: 1;
-
-    height: 100%;
-    width: 100%;
-    bottom: 0;
-    right: 0;
+    top: 40%;
+    right: -30%;
     position: absolute;
     transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+
+.arrow-about{
+    animation: scall 1.5s infinite linear;
+}
+
+@keyframes scall {
+    from { scale: 0.8; }
+    to { scale:1 }
 }
