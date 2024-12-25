@@ -147,7 +147,7 @@ body {
     height: 100%;
     top: 0;
     left: -10px;
-    background: linear-gradient(90deg, #8750f7 0%, #2a1454 100%);
+    background: #1E40B1;
     transform: rotate(-1.09deg);
   }
   
@@ -385,7 +385,7 @@ body {
     background-size: contain;
     opacity: 0.4;
     width: 305px;
-    height: 315px;
+    height: 335px;
     animation: circlmoveerotate 12s infinite linear;
     animation-direction: alternate;
     z-index: -1;
@@ -469,7 +469,7 @@ footer input::placeholder {
 @media (max-width: 1440px) {
     .shape:before {
         width: 250px;
-        height: 260px;
+        height: 300px;
 
     }
     .services-container::before{
