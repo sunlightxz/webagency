@@ -514,3 +514,146 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+
+//vision 2
+document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+    // Header animations
+    const visionHeaderTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".vision-section",
+        start: "top 80%",
+        end: "top 20%",
+      }
+    });
+
+    visionHeaderTl
+      .from('.vision-section .subhead', {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out"
+      })
+      .from('.vision-section .visionx-header h2', {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      }, "-=0.3")
+      .from('.vision-section .visionx-header p', {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out"
+      }, "-=0.3");
+
+   
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animation for the left section (image + notification)
+  gsap.from("#left-section", {
+    scrollTrigger: {
+      trigger: "#how-it-works",
+      start: "top 80%", // Animation triggers when the section enters 80% of the viewport
+      end: "bottom top",
+      toggleActions: "play none none reverse",
+    },
+    x: -100, // Start position
+    opacity: 0, // Start with invisible
+    duration: 1.3,
+    ease: "power2.out",
+  });
+  
+  // Animation for the heading
+  gsap.from("#main-heading", {
+    scrollTrigger: {
+      trigger: "#main-heading",
+      start: "top 90%",
+      toggleActions: "play none none reverse",
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power2.out",
+  });
+  
+  // Animation for each step card
+  gsap.from(".step-card", {
+    scrollTrigger: {
+      trigger: "#steps-container",
+      start: "top 80%",
+      toggleActions: "play none none reverse",
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2, // Delay between each card
+    ease: "power2.out",
+  });
+  gsap.from("#notification-box", {
+    scrollTrigger: {
+      trigger: "#how-it-works",
+      start: "top 80%",
+      toggleActions: "play none none reverse",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 1.5,
+    stagger: 0.2, // Delay between each card
+    ease: "power2.out",
+    scale: 0.4 ,
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded",()=> {
+  // Ensure GSAP and ScrollTrigger are loaded
+gsap.registerPlugin(ScrollTrigger);
+
+// FAQ Section Animation
+gsap.from("#faq-heading", {
+  scrollTrigger: {
+    trigger: "#faq-section",
+    start: "top 80%", // Animation triggers when the section enters 80% of the viewport
+    toggleActions: "play none none reverse",
+  },
+  y: -50, // Slides down
+  opacity: 0, // Starts invisible
+  duration: 1,
+  ease: "power2.out",
+});
+
+gsap.from("#faq-container", {
+  scrollTrigger: {
+    trigger: "#faq-section",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+  x: -100, // Slides in from the left
+  opacity: 0,
+  duration: 1.2,
+  ease: "power2.out",
+});
+
+gsap.from("#faq-image img", {
+  scrollTrigger: {
+    trigger: "#faq-section",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+  x: 100, // Slides in from the right
+  opacity: 0,
+  duration: 1.2,
+  ease: "power2.out",
+  delay: 0.3, // Slight delay to sync with the content
+});
+
+})
