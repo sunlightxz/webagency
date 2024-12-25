@@ -168,19 +168,7 @@ body {
 
   /* swiper*/
 
-  .swiper {
-    width: 100%;
-    padding: 50px 0;
-}
 
-.swiper-slide {
-    opacity: 0.4;
-    transition: opacity 0.3s;
-}
-
-.swiper-slide-active {
-    opacity: 1;
-}
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -703,3 +691,17 @@ footer input::placeholder {
     from { scale: 0.8; }
     to { scale:1 }
 }
+
+
+
+
+.services-section .swiper-button-prev::after ,.services-section .swiper-button-next:after {
+    content: none;
+}
+
+.services-section .swiper-button-prev svg ,.services-section .swiper-button-next svg {
+    width: auto;
+    height: auto;
+}
+
+

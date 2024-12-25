@@ -253,9 +253,8 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTrigger: {
       trigger: "#about-content",
       start: "top bottom",
-      end: "bottom center",
+      end: "bottom bottom-=100",
       scrub: 2,
-      markers :true 
       // Removed pin: true to prevent the pinning effect
     },
   });
@@ -292,9 +291,8 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTrigger: {
       trigger: "#about-visual",
       start: "top bottom",
-      end: "bottom center",
+      end: "bottom bottom-=100",
       scrub: 2,
-      markers :true ,
       // Removed pin: true to prevent the pinning effect
     },
   });
@@ -330,18 +328,196 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
   
-
-
-
-
-  // Add hover animation for button
-  const button = document.querySelector('button');
-  button.addEventListener('mouseenter', () => {
-      gsap.to(button, {
-          scale: 1.05,
-          duration: 0.3
-      });
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize Swiper for services section
+  const servicesSwiper = new Swiper('.services-swiper', {
+    // Enable breakpoints for responsive design
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      }
+    },
+    
+    loop: true,
+    centeredSlides: true,
+    grabCursor: true,
+    
+    // Navigation arrows
+    navigation: {
+      nextEl: '.services-section .swiper-button-next',
+      prevEl: '.services-section .swiper-button-prev',
+    },
+    
+    // Add effects
+    effect: 'coverflow',
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+    
+    speed: 800,
+    resistance: true,
+    resistanceRatio: 0.85,
   });
+
+  // GSAP Animations
+  if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Header animations
+    const servicesHeaderTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".services-section",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    servicesHeaderTl
+      .from('.services-section .subhead', {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out"
+      })
+      .from('.services-section .services-header h2', {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      }, "-=0.3")
+      .from('.services-section .services-header p', {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out"
+      }, "-=0.3");
+
+    // Cards animation on scroll
+    const cardsTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".services-swiper",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Animate all cards initially
+    cardsTimeline.from(".services-section .service-card", {
+      y: 60,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power3.out"
+    });
+
+    // Animate service icons
+    cardsTimeline.from(".services-section .service-icon", {
+      scale: 0,
+      rotation: -180,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: "back.out(1.7)"
+    }, "-=0.8");
+
+    // Nav buttons animation
+    cardsTimeline.from('.services-section .nav-buttons button', {
+      scale: 0,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.2,
+      ease: "back.out(1.7)"
+    }, "-=0.4");
+
+    // Add hover animations for cards
+    const serviceCards = document.querySelectorAll('.services-section .service-card');
+    serviceCards.forEach(card => {
+      const arrow = card.querySelector('.card-arrow svg');
+      
+      card.addEventListener('mouseenter', () => {
+        gsap.to(arrow, {
+          rotation: 45,
+          x: 5,
+          y: -5,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+        
+        gsap.to(card, {
+          y: -10,
+          boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        gsap.to(arrow, {
+          rotation: 0,
+          x: 0,
+          y: 0,
+          duration: 0.3,
+          ease: "power2.in"
+        });
+        
+        gsap.to(card, {
+          y: 0,
+          boxShadow: "0 10px 20px rgba(0,0,0,0.05)",
+          duration: 0.3,
+          ease: "power2.in"
+        });
+      });
+    });
+
+    // Nav buttons hover animation
+    const navButtons = document.querySelectorAll('.services-section .nav-buttons button');
+    navButtons.forEach(button => {
+      button.addEventListener('mouseenter', () => {
+        gsap.to(button, {
+          scale: 1.1,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+      
+      button.addEventListener('mouseleave', () => {
+        gsap.to(button, {
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.in"
+        });
+      });
+    });
+
+    // Animate new slides when they become active
+    servicesSwiper.on('slideChangeTransitionStart', function () {
+      const activeSlide = this.slides[this.activeIndex];
+      if (activeSlide) {
+        gsap.from(activeSlide, {
+          scale: 0.8,
+          opacity: 0.5,
+          duration: 0.5,
+          ease: "power2.out"
+        });
+      }
+    });
+  }
+});
   
   button.addEventListener('mouseleave', () => {
       gsap.to(button, {
