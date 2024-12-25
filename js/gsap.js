@@ -553,7 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
+//nam nam
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -613,6 +613,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+//faq
 
 document.addEventListener("DOMContentLoaded",()=> {
   // Ensure GSAP and ScrollTrigger are loaded
@@ -654,6 +655,54 @@ gsap.from("#faq-image img", {
   duration: 1.2,
   ease: "power2.out",
   delay: 0.3, // Slight delay to sync with the content
+});
+
+})
+
+//contact
+
+document.addEventListener("DOMContentLoaded",()=> {
+  // Ensure GSAP and ScrollTrigger are loaded
+// Ensure GSAP and ScrollTrigger are loaded
+gsap.registerPlugin(ScrollTrigger);
+
+// Stars Animation
+gsap.from(".stars svg", {
+  scrollTrigger: {
+    trigger: ".contact-section",
+    start: "top 80%", // Trigger when the section is 80% in the viewport
+    toggleActions: "play none none reverse",
+  },
+  rotate: -15, // Rotates slightly
+  opacity: 0, // Starts invisible
+  duration: 1,
+  ease: "power2.out",
+});
+
+// "Let's Collaborate" Heading Animation
+gsap.from(".contact-section h3", {
+  scrollTrigger: {
+    trigger: ".contact-section",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+  y: 30, // Slides in from below
+  opacity: 0, // Starts invisible
+  duration: 1.2,
+  ease: "power2.out",
+});
+
+// Main Heading Animation
+gsap.from(".contact-section h2", {
+  scrollTrigger: {
+    trigger: ".contact-section",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+  scale: 0.9, // Slightly scaled down
+  opacity: 0,
+  duration: 1.5,
+  ease: "power3.out",
 });
 
 })
