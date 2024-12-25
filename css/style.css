@@ -206,7 +206,7 @@ body {
 .instructor-name{font-size:.875rem;color:#666}
 .rating{margin-left:auto;color:#666}
 .course-footer{display:flex;justify-content:space-between;align-items:center}
-.btn-enroll{color:#022358;text-decoration:none;font-weight:600;font-size:.875rem}
+.btn-enroll{color:#022358;text-decoration:none;}
 .price-container{display:flex;align-items:center;gap:.5rem}
 .price{color:#022358;font-weight:600}
 .price-original{color:#666;text-decoration:line-through;font-size:.875rem}
@@ -723,4 +723,15 @@ footer input::placeholder {
   
   .services-swiper .swiper-slide-active {
     opacity: 1;
+  }
+
+  .swiper-slide {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+
+  .award-card {
+    transform-style: preserve-3d;
+    will-change: transform;
   }

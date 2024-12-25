@@ -244,8 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-// Ensure you include ScrollTrigger and GSAP libraries
+//about section
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -327,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 });
 
-  
+//service section
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -365,46 +364,153 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardsTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".services-swiper",
-        start: "top 80%",
+        start: "top 90%",
         end: "top 20%",
         toggleActions: "play none none reverse"
       }
     });
 
     // Animate all cards initially
-    cardsTimeline.from(".slide1 ", {
-      y: 60,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power3.out"
-    });
-
-    // Animate service icons
-    cardsTimeline.from(".slide1 .service-icon", {
+    cardsTimeline
+    
+ 
+    .from(".slides .service-icon", {
       scale: 0,
       rotation: -180,
       opacity: 0,
       duration: 0.6,
       stagger: 0.1,
       ease: "back.out(1.7)"
-    }, "-=0.8");
+    },)
+    .from(".slides h3", {
+      y: 20,
+      opacity: 0,
+      duration: 0.4,
+      ease: "power3.out"
+    }, "-=0.2")
+    .from(".slides p", {
+      y: 20,
+      opacity: 0,
+      duration: 0.4,
+      ease: "power3.out"
+    }, "-=0.2")
+    .from(".slides .card-arrow", {
+      x: -20,
+      opacity: 0,
+      duration: 0.4,
+      ease: "power3.out"
+    }, "-=0.2")
+    .from(".nvbtn", {
+      y: 20,
+      opacity: 0,
+      duration: 0.4,
+      ease: "power3.out"
+    }, "-=0.2")
+
 
     // Nav buttons animation
-    cardsTimeline.from('.slide1 .nav-buttons button', {
-      scale: 0,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.2,
-      ease: "back.out(1.7)"
-    }, "-=0.4");
+    
 
     
 });
   
-  button.addEventListener('mouseleave', () => {
-      gsap.to(button, {
-          scale: 1,
-          duration: 0.3
-      });
+
+
+//course section
+
+document.addEventListener('DOMContentLoaded', function() {
+  gsap.registerPlugin(ScrollTrigger);
+  const courseCards = document.querySelectorAll('.course-card');
+  
+  // Create a stagger effect for the cards
+  gsap.from(courseCards, {
+    scrollTrigger: {
+      trigger: ".courses-grid",
+      start: "top 80%", // Start animation when the top of the grid hits 80% of viewport
+      toggleActions: "play none none reverse"
+    },
+    duration: 1,
+    opacity: 0,
+    stagger: {
+      amount: 0.8, // Total time to stagger all animations
+      from: "start"
+    },
+    ease: "power2.out"
   });
+
+  // Animate the header section
+  gsap.from('.courses-section .subhead', {
+    scrollTrigger: {
+      trigger: ".courses-section",
+      start: "top 80%",
+      toggleActions: "play none none reverse"
+    },
+    duration: 0.8,
+    y: -30,
+    opacity: 0,
+    ease: "power2.out"
+  });
+
+  gsap.from('.courses-section h1', {
+    scrollTrigger: {
+      trigger: ".courses-section",
+      start: "top 80%",
+      toggleActions: "play none none reverse"
+    },
+    duration: 0.8,
+    y: 30,
+    opacity: 0,
+    delay: 0.2,
+    ease: "power2.out"
+  });
+
+  // Animate the Get Started button
+  gsap.from('.courses-section a[href="#services"]', {
+    scrollTrigger: {
+      trigger: ".courses-section",
+      start: "top 80%",
+      toggleActions: "play none none reverse"
+    },
+    duration: 0.8,
+    x: 30,
+    opacity: 0,
+    delay: 0.4,
+    ease: "power2.out"
+  });
+});
+
+
+
+//vision section
+document.addEventListener('DOMContentLoaded', function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // GSAP Animations only for larger screens (larger than 768px)
+  if (window.innerWidth >= 768) {  // md breakpoint (768px)
+    // Animation for card 2
+     // Timeline for card 2
+  gsap.to('.award-card.two', {
+    scrollTrigger: {
+      trigger: '.award-section',
+      start: 'top-=5% top', // Starts at the top of the section
+      end: '60% bottom', // Ends halfway through the section
+      scrub: 1,
+    },
+    x: '-105.2%', // Moves the card to the left
+    ease: 'none',
+  });
+
+  // Timeline for card 3
+  gsap.to('.award-card.three', {
+    scrollTrigger: {
+      trigger: '.award-section',
+      start: 'top top', // Starts when card 2 animation is halfway done
+      end: 'bottom bottom', // Ends at the bottom of the section
+      scrub: 1,
+    },
+    x: '-205.5%', // Moves the card further to the left
+    ease: 'none',
+  });
+  }
+});
+
