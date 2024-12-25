@@ -705,3 +705,22 @@ footer input::placeholder {
 }
 
 
+.services-swiper {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+  }
+  
+  .services-swiper .swiper-slide {
+    text-align: left;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+  }
+  
+  .services-swiper .swiper-slide-active {
+    opacity: 1;
+  }

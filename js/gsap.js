@@ -329,52 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize Swiper for services section
-  const servicesSwiper = new Swiper('.services-swiper', {
-    // Enable breakpoints for responsive design
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 30
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 30
-      }
-    },
-    
-    loop: true,
-    centeredSlides: true,
-    grabCursor: true,
-    
-    // Navigation arrows
-    navigation: {
-      nextEl: '.services-section .swiper-button-next',
-      prevEl: '.services-section .swiper-button-prev',
-    },
-    
-    // Add effects
-    effect: 'coverflow',
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: false,
-    },
-    
-    speed: 800,
-    resistance: true,
-    resistanceRatio: 0.85,
-  });
-
-  // GSAP Animations
-  if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
-    gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
     // Header animations
     const servicesHeaderTl = gsap.timeline({
@@ -417,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Animate all cards initially
-    cardsTimeline.from(".services-section .service-card", {
+    cardsTimeline.from(".slide1 ", {
       y: 60,
       opacity: 0,
       duration: 0.8,
@@ -426,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Animate service icons
-    cardsTimeline.from(".services-section .service-icon", {
+    cardsTimeline.from(".slide1 .service-icon", {
       scale: 0,
       rotation: -180,
       opacity: 0,
@@ -436,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, "-=0.8");
 
     // Nav buttons animation
-    cardsTimeline.from('.services-section .nav-buttons button', {
+    cardsTimeline.from('.slide1 .nav-buttons button', {
       scale: 0,
       opacity: 0,
       duration: 0.6,
@@ -444,79 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "back.out(1.7)"
     }, "-=0.4");
 
-    // Add hover animations for cards
-    const serviceCards = document.querySelectorAll('.services-section .service-card');
-    serviceCards.forEach(card => {
-      const arrow = card.querySelector('.card-arrow svg');
-      
-      card.addEventListener('mouseenter', () => {
-        gsap.to(arrow, {
-          rotation: 45,
-          x: 5,
-          y: -5,
-          duration: 0.3,
-          ease: "power2.out"
-        });
-        
-        gsap.to(card, {
-          y: -10,
-          boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-          duration: 0.3,
-          ease: "power2.out"
-        });
-      });
-      
-      card.addEventListener('mouseleave', () => {
-        gsap.to(arrow, {
-          rotation: 0,
-          x: 0,
-          y: 0,
-          duration: 0.3,
-          ease: "power2.in"
-        });
-        
-        gsap.to(card, {
-          y: 0,
-          boxShadow: "0 10px 20px rgba(0,0,0,0.05)",
-          duration: 0.3,
-          ease: "power2.in"
-        });
-      });
-    });
-
-    // Nav buttons hover animation
-    const navButtons = document.querySelectorAll('.services-section .nav-buttons button');
-    navButtons.forEach(button => {
-      button.addEventListener('mouseenter', () => {
-        gsap.to(button, {
-          scale: 1.1,
-          duration: 0.3,
-          ease: "power2.out"
-        });
-      });
-      
-      button.addEventListener('mouseleave', () => {
-        gsap.to(button, {
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.in"
-        });
-      });
-    });
-
-    // Animate new slides when they become active
-    servicesSwiper.on('slideChangeTransitionStart', function () {
-      const activeSlide = this.slides[this.activeIndex];
-      if (activeSlide) {
-        gsap.from(activeSlide, {
-          scale: 0.8,
-          opacity: 0.5,
-          duration: 0.5,
-          ease: "power2.out"
-        });
-      }
-    });
-  }
+    
 });
   
   button.addEventListener('mouseleave', () => {
