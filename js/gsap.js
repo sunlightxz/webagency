@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "power3.out"
     }, "-=0.2")
     .from(".slides .card-arrow", {
-      x: -20,
+     
       opacity: 0,
       duration: 0.4,
       ease: "power3.out"
@@ -473,8 +473,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     duration: 0.8,
     x: 30,
-    opacity: 0,
-    delay: 0.4,
+    delay: 0.3,
     ease: "power2.out"
   });
 });
