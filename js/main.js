@@ -106,3 +106,42 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('description').textContent = 'We are well known within the industry for our technical capabilities due to our industry leading software.';
     });
 });
+
+
+
+//navbar
+
+const navbar = document.getElementById('navbar');
+let lastScrollTop = 0;
+
+// Function to handle scroll behavior
+function handleScroll() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  // Add/remove classes based on scroll direction and position
+  if (scrollTop > lastScrollTop && scrollTop > 100) {
+    // Scrolling down & past 100px - hide navbar
+    navbar.style.transform = 'translateY(-100%)';
+    navbar.classList.remove('shadow-sm');
+  } else {
+    // Scrolling up or at top - show navbar
+    navbar.style.transform = 'translateY(0)';
+    if (scrollTop > 10) {
+      navbar.classList.add('shadow-md', 'bg-white/95', 'dark:bg-black/95');
+    } else {
+      navbar.classList.remove('shadow-md', 'bg-white/95', 'dark:bg-black/95');
+      navbar.classList.add('shadow-sm');
+    }
+  }
+  
+  lastScrollTop = scrollTop;
+}
+
+// Add scroll event listener with debouncing for better performance
+let isScrolling;
+window.addEventListener('scroll', () => {
+  window.clearTimeout(isScrolling);
+  isScrolling = setTimeout(() => {
+    handleScroll();
+  }, 10);
+});
