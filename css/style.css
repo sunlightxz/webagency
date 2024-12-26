@@ -142,19 +142,10 @@ body {
   
   /* Background Styling */
   .bgscroll {
-    background: rgb(192, 172, 233);
+    background: #1E40B1;
   }
   
-  .bgscroll::before {
-    position: absolute;
-    content: "";
-    width: 110%;
-    height: 100%;
-    top: 0;
-    left: -10px;
-    background: #1E40B1;
-    transform: rotate(-1.09deg);
-  }
+ 
   
   /* Rotating Images */
   .bgscroll img {
