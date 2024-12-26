@@ -81,13 +81,13 @@
       </div>
 
       <nav id="navbar"
-      class="shadow-sm border-b-[1px] dark:border-[rgba(57,56,56,0.1)] dark:shadow-[0_0_30px_rgba(135,80,247,0.2)] fixed w-full top-0 z-50 border-gray-300 transition-colors duration-300  backdrop-blur font-quicksand"
+      class="shadow-sm border-b-[1px] dark:border-[rgba(57,56,56,0.1)] dark:shadow-[0_0_30px_rgba(135,80,247,0.2)] fixed w-full top-0 z-50 border-gray-300 transition-colors duration-300  dark:bg-black  bg-white font-quicksand"
     >
       <div class="max-w-7xl mx-auto px-2 py-2 sm:px-5 lg:px-7">
         <div class="flex justify-between items-center h-16">
           <!-- Logo -->
           <div class="flex-shrink-0 flex items-center">
-            <a href="" class="text-xl font-semibold text-white flex justify-center items-center"
+            <a href="" class="text-xl font-semibold text-black dark:text-white flex justify-center items-center"
               >
               <img 
               src="./assets/images/logo-white.png" 
@@ -109,22 +109,22 @@
           >
             <a
               href="#"
-              class="text-purple-400 font-semibold"
+              class="text-[#022358] dark:text-purple-400 font-semibold"
               >Accueil</a
             >
             <a
               href="#"
-              class="text-gray-300  hover:text-purple-400 transition-colors"
+              class="text-[#022358] dark:text-gray-300 hover:text-blue-900 dark:hover:text-purple-400 transition-colors"
               >Formation</a
             >
             <a
               href="#"
-              class="text-gray-300  hover:text-purple-400 transition-colors"
+              class="text-[#022358] dark:text-gray-300 hover:text-blue-900 dark:hover:text-purple-400 transition-colors"
               >Services</a
             >
             <a
-              href="#"
-              class="text-gray-300  hover:text-purple-400 transition-colors"
+              href="./about.html"
+              class="text-[#022358] dark:text-gray-300 hover:text-blue-900 dark:hover:text-purple-400 transition-colors"
               >A Propos</a
             >
           </div>
@@ -330,30 +330,29 @@
    <img class="w-full hidden md:block h-full" src="./assets/images/image.png" alt="" />
  </div>
 
- <div class="absolute bottom-0 overflow-x-hidden  z-10 w-screen left-0">
-    <svg
-      class="h-full w-full"
-      xmlns="http://www.w3.org/2000/svg"
-      widht="3000"
-      height="400"
-      viewBox="0 180 2500 200"
-      fill="#ffff"
+ <div class="absolute bottom-0 overflow-x-hidden z-10 w-screen left-0">
+  <svg
+    class="h-full w-full dark:fill-[#030712] fill-white"
+    xmlns="http://www.w3.org/2000/svg"
+    width="3000"
+    height="400"
+    viewBox="0 180 2500 200"
+  >
+    <path
+      class="st1"
+      d="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250"
     >
-      <path
-        class="st1"
-        d="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250"
-      >
-        <animate
-          attributeName="d"
-          dur="5s"
-          values="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250;
+      <animate
+        attributeName="d"
+        dur="5s"
+        values="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250;
                 M 0 250 C 400 50 400 400 3000 250 L 3000 550 L 0 550 L 0 250;
                 M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250"
-          repeatCount="indefinite"
-        ></animate>
-      </path>
-    </svg>
-  </div>
+        repeatCount="indefinite"
+      ></animate>
+    </path>
+  </svg>
+</div>
 </section>
 
 
@@ -410,10 +409,10 @@
        </h2>
        <p
          id="about-p"
-         class="text-lg opacity-80 leading-relaxed mb-6 font-manrope dark:text-gray-300"
+         class="text-lg opacity-80 leading-relaxed font-manrope dark:text-gray-300"
        >
-       CreaSage est votre allié stratégique. Notre mission est de former, connecter et accompagner les talents et les entreprises.
-     </p>
+       Nous aidons les entreprises à réussir dans le digital grâce à un contenu engageant et des stratégies innovantes. Notre objectif est de transformer vos idées en opportunités et d'ouvrir de nouvelles perspectives grâce à des solutions sur mesure.
+      </p>
        <div class="w-12 h-1 bg-blue-400 my-8"></div>
        <div class="space-y-4 w-full" id="about-check">
          <div
@@ -1566,7 +1565,7 @@
       >
         <h1
           id="main-heading"
-          class="text-2xl sm:text-3xl lg:text-[56px] font-bold text-[#2A2A2A] dark:text-white leading-tight"
+          class="text-2xl sm:text-3xl lg:text-[56px] font-bold text-[#2A2A2A] dark:text-white "
         >
           How it works in 3 simple steps
         </h1>

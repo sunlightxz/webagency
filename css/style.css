@@ -31,6 +31,9 @@ body {
 #navbar {
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
+  #main-heading {
+    line-height: 3.4rem !important;
+  }
 /* Smooth transitions */
 .transition-transform {
     transition: transform 0.3s ease-in-out;
@@ -222,8 +225,6 @@ body {
 }
 
 
-
-
 .groupx span {
     position: absolute;
     width: 16px;
@@ -232,9 +233,8 @@ body {
     top: 140px;
     background: linear-gradient(90deg, #FF12E7 0%, #2a1454 110.61%);
     border-radius: 50%;
-    -webkit-animation: services-triangle 5s linear infinite alternate;
-    animation: services-triangle 5s linear infinite alternate;
-    filter:blur(6px);
+    animation: ball1 7s linear infinite;
+    filter: blur(6px);
 }
 
 .groupx img {
@@ -243,47 +243,106 @@ body {
     height: 45px;
     right: 15%;
     top: 70%;
-    animation: services-triangle 5s linear infinite alternate;
+    animation: paper-ball 8s ease-in-out infinite;
 }
 
-.groupx span:nth-child(2){
+.groupx span:nth-child(2) {
     width: 20px;
     height: 20px;
     right: 25%;
     top: 170px;
     z-index: -1;
-    filter:blur(0px);
+    filter: blur(0px);
     background: linear-gradient(90deg, #C4DFD9 0%, #56388e 110.61%);
+    animation: ball2 6s linear infinite;
 }
 
-
-.groupx span:nth-child(3){
+.groupx span:nth-child(3) {
     width: 20px;
     height: 20px;
     left: 25%;
     top: 70%;
     z-index: -1;
-    filter:blur(0px);
-    background: linear-gradient(90deg, #DEF9FA 0%, #9DEDF0 45% , #5CE1E6 70%,#33BBCF 100%);
+    filter: blur(0px);
+    background: linear-gradient(90deg, #DEF9FA 0%, #9DEDF0 45%, #5CE1E6 70%, #33BBCF 100%);
+    animation: ball3 9s linear infinite;
 }
-.groupx span:nth-child(4){
+
+.groupx span:nth-child(4) {
     width: 20px;
     height: 20px;
     left: 35%;
     top: 80%;
     z-index: -1;
     background: #022358;
+    animation: ball4 5s linear infinite;
 }
-@keyframes services-triangle {
+
+@keyframes ball1 {
     0% {
-        transform: rotate(0deg) translateX(-50px);
+        transform: rotate(0deg) translate(0);
+    }
+    50% {
+        transform: rotate(180deg) translate(30px, 30px);
     }
     100% {
-        transform: rotate(360deg) translateY(100px);
+        transform: rotate(360deg) translate(0);
     }
 }
 
+@keyframes ball2 {
+    0% {
+        transform: rotate(0deg) translate(0);
+    }
+    50% {
+        transform: rotate(-180deg) translate(-40px, 20px);
+    }
+    100% {
+        transform: rotate(-360deg) translate(0);
+    }
+}
 
+@keyframes ball3 {
+    0% {
+        transform: rotate(0deg) translate(0);
+    }
+    50% {
+        transform: rotate(180deg) translate(20px, -30px);
+    }
+    100% {
+        transform: rotate(360deg) translate(0);
+    }
+}
+
+@keyframes ball4 {
+    0% {
+        transform: rotate(0deg) translate(0);
+    }
+    50% {
+        transform: rotate(-180deg) translate(30px, -20px);
+    }
+    100% {
+        transform: rotate(-360deg) translate(0);
+    }
+}
+
+@keyframes paper-ball {
+    0% {
+        transform: rotate(0deg) translate(0);
+    }
+    25% {
+        transform: rotate(90deg) translate(20px, 20px);
+    }
+    50% {
+        transform: rotate(180deg) translate(0, 40px);
+    }
+    75% {
+        transform: rotate(270deg) translate(-20px, 20px);
+    }
+    100% {
+        transform: rotate(360deg) translate(0);
+    }
+}
 /* gradient */
 
 
