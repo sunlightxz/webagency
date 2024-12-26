@@ -138,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  initSmoothScroll();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -705,3 +706,41 @@ gsap.from(".contact-section h2", {
 });
 
 })
+
+function initSmoothScroll() {
+  // Smooth scroll for all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        gsap.to(window, {
+          duration: 1,
+          scrollTo: {
+            y: target,
+            offsetY: 70 // Adjust this value based on your header height
+          },
+          ease: "power3.inOut"
+        });
+      }
+    });
+  });
+
+  // Optional: Smooth scroll for mouse wheel
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smooth: true,
+    smoothTouch: false,
+    touchMultiplier: 2
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+}
