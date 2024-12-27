@@ -330,90 +330,97 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
 
-    // Header animations
-    const servicesHeaderTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".services-section",
-        start: "top 80%",
-        end: "top 20%",
-        toggleActions: "play none none reverse"
-      }
-    });
+  // Header animations
+  const servicesHeaderTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".services-section",
+      start: "top 80%",
+      end: "top 20%",
+      toggleActions: "play none none reverse",
+    },
+  });
 
-    servicesHeaderTl
-      .from('.services-section .subhead', {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power3.out"
-      })
-      .from('.services-section .services-header h2', {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power3.out"
-      }, "-=0.3")
-      .from('.services-section .services-header p', {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power3.out"
-      }, "-=0.3");
+  servicesHeaderTl
+    .from('.services-section .subhead', {
+      y: 30,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.out",
+    })
+    .from('.services-section .services-header h2', {
+      y: 40,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power3.out",
+    }, "-=0.3")
+    .from('.services-section .services-header p', {
+      y: 30,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power3.out",
+    }, "-=0.3");
 
-    // Cards animation on scroll
-    const cardsTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".services-swiper",
-        start: "top 90%",
-        end: "top 20%",
-        toggleActions: "play none none reverse"
-      }
-    });
+  // Section scale animation
+  const sectionScaleTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".services-section",
+      start: "top 80%",
+      end: "top top",
+      scrub :2 ,
+      toggleActions: "play none none reverse",
+    },
+  });
 
-    // Animate all cards initially
-    cardsTimeline
-    
- 
+  sectionScaleTl.fromTo(
+    ".services-section",
+    { scale: 0.9, opacity: 0.8  },
+    { scale: 1, opacity: 1, duration: 0.8, ease: "power2.out" }
+  );
+
+  // Cards animation on scroll
+  const cardsTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".services-swiper",
+      start: "top 90%",
+      end: "top 20%",
+      toggleActions: "play none none reverse",
+    },
+  });
+
+  cardsTimeline
     .from(".slides .service-icon", {
       scale: 0,
       rotation: -180,
       opacity: 0,
       duration: 0.6,
       stagger: 0.1,
-      ease: "back.out(1.7)"
-    },)
+      ease: "back.out(1.7)",
+    })
     .from(".slides h3", {
       y: 20,
       opacity: 0,
       duration: 0.4,
-      ease: "power3.out"
+      ease: "power3.out",
     }, "-=0.2")
     .from(".slides p", {
       y: 20,
       opacity: 0,
       duration: 0.4,
-      ease: "power3.out"
+      ease: "power3.out",
     }, "-=0.2")
     .from(".slides .card-arrow", {
-     
       opacity: 0,
       duration: 0.4,
-      ease: "power3.out"
+      ease: "power3.out",
     }, "-=0.2")
     .from(".nvbtn", {
       y: 20,
       opacity: 0,
       duration: 0.4,
-      ease: "power3.out"
-    }, "-=0.2")
-
-
-    // Nav buttons animation
-    
-
-    
+      ease: "power3.out",
+    }, "-=0.2");
 });
-  
+
 
 
 //course section

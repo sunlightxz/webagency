@@ -5,9 +5,10 @@
     <title>Modern Navigation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+
+
     <script>
       tailwind.config = {
         darkMode: "class",
@@ -66,7 +67,6 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
     />
-    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -694,7 +694,7 @@
 
    <!-- Service Section-->
    <section
-   class="services-section section-gradient z-30 bg-gradient-to-br from-gray-100 to-purple-100 dark:from-[#090a1c] dark:to-gray-950 relative py-24"
+   class="services-section rounded-t-lg section-gradient z-30 bg-gradient-to-br from-gray-100 to-purple-100 dark:from-[#090a1c] dark:to-gray-950 relative py-24"
  >
    <div
      class="services-container shape max-w-7xl mx-auto px-8 flex flex-col justify-center items-center"
@@ -1976,7 +1976,7 @@
 </section>
 
     <footer class="bg-black z-30  relative text-white py-16">
-      <div class="absolute sm:top-[-85px] top-[-55px] overflow-x-hidden z-40 w-screen left-0">
+      <div class="wave absolute lg:top-[-145px] md:top-[-115px] sm:top-[-85px] top-[-55px] overflow-x-hidden z-40 w-screen left-0">
         <svg
           class="h-full w-full  fill-black"
           xmlns="http://www.w3.org/2000/svg"
@@ -2074,15 +2074,28 @@
     </footer>
 
     <script>
-      
+      // Initialize Lenis
+      const lenis = new Lenis({
+        duration: 1.2, // Adjust scroll duration
+        easing: (t) => 1 - Math.pow(1 - t, 3), // Smooth easing
+        smooth: true, // Enable smooth scrolling
+      });
+  
+      // Animation Frame for Lenis
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/swiper.js"></script>
-    <script src="./js/faq-data.js"></script>
-    <script src="./js/faq.js"></script>
-    <script src="./js/gsap.js"></script>
-    <script src="./js/darkMode.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <script src="./js/main.js"></script>
+   <script src="./js/swiper.js"></script>
+   <script src="./js/faq-data.js"></script>
+   <script src="./js/faq.js"></script>
+   <script src="./js/gsap.js"></script>
+   <script src="./js/darkMode.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundle.js"></script>
   </body>
 </html>
