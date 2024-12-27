@@ -328,7 +328,6 @@ visualTimeline
 
 //service section
 document.addEventListener('DOMContentLoaded', () => {
-  window.onload = () => {
     gsap.registerPlugin(ScrollTrigger);
   
     // Quick fade-in to ensure visibility
@@ -367,49 +366,8 @@ document.addEventListener('DOMContentLoaded', () => {
       { scale: 1, opacity: 1 }
     );
   
-    // Cards animation
-    const cardsTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".services-swiper",
-        start: "top 90%",
-        end: "top 20%",
-        toggleActions: "play none none reverse",
-      },
-    });
+   
     
-    cardsTimeline
-      .from(".slides .service-icon", {
-        scale: 0,
-        rotation: -180,
-        opacity: 0,
-        duration: 0.6,
-        ease: "back.out(1.7)",
-      })
-      .from(".slides h3", {
-        y: 20,
-        opacity: 0,
-        duration: 0.4,
-        ease: "power3.out",
-      }, "-=0.3")
-      .from(".slides p", {
-        y: 20,
-        opacity: 0,
-        duration: 0.4,
-        ease: "power3.out",
-      }, "-=0.3")
-      .from(".slides .card-arrow", {
-        opacity: 0,
-        duration: 0.4,
-        ease: "power3.out",
-      }, "-=0.3")
-      .from(".nvbtn", {
-        y: 20,
-        opacity: 0,
-        duration: 0.4,
-        ease: "power3.out",
-      }, "-=0.3");
-    
-    }
 });
 
 
