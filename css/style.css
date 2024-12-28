@@ -468,7 +468,7 @@ body {
     position: absolute;
     left: 120%;
     top: 50%;
-    background-color: gray;
+    background-color: rgb(226, 226, 226);
     opacity: 0.4;
     width: 25vw;
     height: 1px;
@@ -479,7 +479,7 @@ body {
     position: absolute;
     right: 120%;
     top: 50%;
-    background-color: gray;
+    background-color: rgb(226, 226, 226);
     opacity: 0.4;
     width: 25vw;
     height: 1px;
@@ -845,14 +845,13 @@ footer input::placeholder {
 
 .mySwiperd .swiper-slide {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 /* Custom pagination styling */
 .mySwiperd .swiper-pagination {
     position: relative;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .mySwiperd .swiper-pagination-bullet {
@@ -860,6 +859,7 @@ footer input::placeholder {
     height: 10px;
     background: #0080FF;
     opacity: 0.5;
+
 }
 
 .mySwiperd .swiper-pagination-bullet-active {

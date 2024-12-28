@@ -22,6 +22,39 @@
 </head>
 <body class="bg-gray-900 text-white">
 
+
+  <svg >
+    <path
+    d="M100 20
+      C 120 20, 140 35, 160 50
+      C 180 65, 180 85, 180 100
+      C 180 115, 180 135, 160 150
+      C 140 165, 120 180, 100 180
+      C 80 180, 60 165, 40 150
+      C 20 135, 20 115, 20 100
+      C 20 85, 20 65, 40 50
+      C 60 35, 80 20, 100 20
+      Z"
+    fill="none"
+    stroke={color}
+    strokeWidth="8"
+  />
+  
+  <StarComponent
+    d="M100 60 L100 140 M60 100 L140 100
+       M71 71 L129 129 M71 129 L129 71"
+    stroke={color}
+    strokeWidth="12"
+    strokeLinecap="round"
+  />
+  
+  <circle
+    cx="100"
+    cy="100"
+    r="4"
+    fill={color}
+  />
+  </svg>
  <!-- vision 1 Section-->
  <section
  class="relative bg-gradient-to-br from-gray-100 to-purple-100 dark:from-[#090a1c] dark:to-gray-950 md:py-[160px] py-[100px] z-30 font-quicksand award-section"
