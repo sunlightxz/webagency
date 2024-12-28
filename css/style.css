@@ -653,7 +653,7 @@ footer input::placeholder {
 
 
 .subhead {
- background-image: linear-gradient(268deg, #e6f3eb 1.92%, #e7f4e6 26.97%, #fefbf0 92.72%);
+ background-image: linear-gradient(268deg, #C7C7FF 1.92%, #e8e6f3 92.72%) !important;
 }
 
 
@@ -833,4 +833,41 @@ footer input::placeholder {
     display: block;
     width: 1323px;
     height: 965px;
+}
+
+
+
+.mySwiperd {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.mySwiperd .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Custom pagination styling */
+.mySwiperd .swiper-pagination {
+    position: relative;
+    margin-top: 20px;
+}
+
+.mySwiperd .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #0080FF;
+    opacity: 0.5;
+}
+
+.mySwiperd .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+
+
+.bgas{
+  
 }
