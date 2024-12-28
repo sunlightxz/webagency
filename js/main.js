@@ -145,3 +145,33 @@ window.addEventListener('scroll', () => {
     handleScroll();
   }, 10);
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+          // Remove active class from all buttons
+          tabBtns.forEach(b => {
+              b.classList.remove('tab-active');
+              b.classList.add('bg-gray-100');
+          });
+
+          // Add active class to clicked button
+          btn.classList.add('tab-active');
+          btn.classList.remove('bg-gray-100');
+
+          // Hide all tab contents
+          tabContents.forEach(content => {
+              content.classList.add('hidden');
+          });
+
+          // Show selected tab content
+          const tabId = btn.dataset.tab;
+          document.getElementById(tabId).classList.remove('hidden');
+      });
+  });
+});

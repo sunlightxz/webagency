@@ -871,3 +871,17 @@ footer input::placeholder {
 .bgas{
   
 }
+
+.tab-active {
+    @apply bg-pink-200 relative;
+}
+.tab-active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-color: #fce7f3;
+    border-radius: 0 0 8px 8px;
+}
