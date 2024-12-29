@@ -59,6 +59,10 @@ body {
     background-repeat: no-repeat;
     animation: updown 20s linear infinite;
 }
+
+.updown{
+    animation: updown2 4s ease-in-out infinite;
+}
 /* Hero Spiral Image */
 .hero-spiral {
     width: 100%;
@@ -90,6 +94,13 @@ body {
 @keyframes updown {
     from { transform: translateY(-50%) rotate(0deg); }
     to { transform: translateY(20%) rotate(30deg); }
+
+}
+@keyframes updown2 {
+    0%{transform:translateY(0) rotate(0deg)}
+    50%{transform:translateY(30px) rotate(30deg)}
+    100%{transform:translateY(0) rotate(0deg)}
+
 
 }
 
@@ -873,7 +884,7 @@ footer input::placeholder {
 }
 
 .tab-active {
-    @apply bg-pink-200 relative;
+    background-color: #d9cfec;
 }
 .tab-active::after {
     content: '';
