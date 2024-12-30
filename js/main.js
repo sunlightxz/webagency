@@ -175,3 +175,93 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const groupx = document.querySelector(".bl1");
+
+  window.addEventListener("mousemove", (e) => {
+    const { clientX: mouseX, clientY: mouseY } = e;
+
+    const xMove = (mouseX - window.innerWidth / 2) * 0.05;
+    const yMove = (mouseY - window.innerHeight / 2) * 0.05;
+
+    gsap.to(groupx, {
+      x: xMove,
+      y: yMove,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const groupx = document.querySelector(".bl2");
+
+  window.addEventListener("mousemove", (e) => {
+    const { clientX: mouseX, clientY: mouseY } = e;
+
+    const xMove = (mouseX - window.innerWidth / 2) * 0.05;
+    const yMove = (mouseY - window.innerHeight / 2) * 0.05;
+
+    gsap.to(groupx, {
+      x: xMove,
+      y: yMove,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const groupx = document.querySelector(".bl3");
+
+  window.addEventListener("mousemove", (e) => {
+    const { clientX: mouseX, clientY: mouseY } = e;
+
+    const xMove = (mouseX - window.innerWidth / 2) * 0.05;
+    const yMove = (mouseY - window.innerHeight / 2) * 0.05;
+
+    gsap.to(groupx, {
+      x: xMove,
+      y: yMove,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const groupx = document.querySelector(".bl4");
+
+  window.addEventListener("mousemove", (e) => {
+    const { clientX: mouseX, clientY: mouseY } = e;
+
+    const xMove = (mouseX - window.innerWidth / 2) * 0.05;
+    const yMove = (mouseY - window.innerHeight / 2) * 0.05;
+
+    gsap.to(groupx, {
+      x: xMove,
+      y: yMove,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const groupx = document.querySelector(".bl5");
+
+  window.addEventListener("mousemove", (e) => {
+    const { clientX: mouseX, clientY: mouseY } = e;
+
+    const xMove = (mouseX - window.innerWidth / 2) * 0.05;
+    const yMove = (mouseY - window.innerHeight / 2) * 0.05;
+
+    gsap.to(groupx, {
+      x: xMove,
+      y: yMove,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  });
+});

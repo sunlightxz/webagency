@@ -7,10 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Set initial positions for the floating elements
-  const spans = document.querySelectorAll(".groupx span");
-  const paperBall = document.querySelector(".groupx img");
-  const imagesection2 = document.querySelector("#image-section2");
+
 
   const contentElements = {
     topText: document.querySelector(".font-manrope.text-primary"),
@@ -20,20 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     buttons: document.querySelectorAll(".flex.flex-col.sm\\:flex-row a"),
   };
 
-  // Initialize floating elements positions
-  spans.forEach((span, index) => {
-    const randomX = Math.random() * window.innerWidth;
-    const randomY = Math.random() * window.innerHeight;
-    gsap.set(span, {
-      x: randomX,
-      y: randomY,
-      opacity: 0,
-      scale: 0,
-    });
-  });
 
-  // Set initial states
-  gsap.set(paperBall, { opacity: 0, scale: 0, rotation: -180 });
   gsap.set(
     [
       contentElements.topText,
@@ -48,56 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Create main timeline
   const mainTl = gsap.timeline({
     defaults: { ease: "power3.out" },
-  });
-
-  // Animate floating elements
-  spans.forEach((span, index) => {
-    mainTl.to(
-      span,
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 1,
-        delay: index * 0.2,
-      },
-      index * 0.1
-    );
-
-    // Add continuous floating animation
-    gsap.to(span, {
-      y: `random(-100, 100)`,
-      x: `random(-100, 100)`,
-      rotation: `random(-180, 180)`,
-      duration: `random(10, 20)`,
-      repeat: -1,
-      yoyo: true,
-      ease: "none",
-      delay: index * 0.5,
-    });
-  });
-
-  // Animate paper ball
-  mainTl.to(
-    paperBall,
-    {
-      opacity: 1,
-      scale: 1,
-      rotation: 0,
-      duration: 1.5,
-      ease: "elastic.out(1, 0.5)",
-    },
-    0.5
-  );
-
-  // Add continuous floating animation to paper ball
-  gsap.to(paperBall, {
-    y: "random(-30, 30)",
-    x: "random(-30, 30)",
-    rotation: "random(-15, 15)",
-    duration: 5,
-    repeat: -1,
-    yoyo: true,
-    ease: "sine.inOut",
   });
 
   // Animate content elements
@@ -170,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
 
-  
 
   document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);

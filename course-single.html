@@ -350,7 +350,32 @@
     </div>
   </section>
 
-  <footer class="bg-black z-10 overflow-hidden text-white py-16">
+  <footer class="bg-black z-30 relative text-white py-16">
+    <div
+      class="wave absolute lg:top-[-145px] md:top-[-115px] sm:top-[-85px] top-[-55px] overflow-x-hidden z-40 w-screen left-0"
+    >
+      <svg
+        class="h-full w-full fill-black"
+        xmlns="http://www.w3.org/2000/svg"
+        width="3000"
+        height="400"
+        viewBox="0 180 2500 200"
+      >
+        <path
+          class="st1"
+          d="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250"
+        >
+          <animate
+            attributeName="d"
+            dur="5s"
+            values="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250;
+                    M 0 250 C 400 50 400 400 3000 250 L 3000 550 L 0 550 L 0 250;
+                    M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250"
+            repeatCount="indefinite"
+          ></animate>
+        </path>
+      </svg>
+    </div>
     <div class="container mx-auto px-4">
       <!-- Grid container -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -361,28 +386,30 @@
             communication, creativity, and impact. Subscribe now!
           </h2>
           <div class="flex border-b border-white mt-9">
-            <input type="email" id="emailInput" placeholder="Email Address"
-              class="bg-transparent w-full py-2 focus:outline-none text-white" />
+            <input
+              type="email"
+              id="emailInput"
+              placeholder="Email Address"
+              class="bg-transparent w-full py-2 focus:outline-none text-white"
+            />
             <button id="subscribeBtn" class="ml-4 text-2xl">→</button>
           </div>
         </div>
 
         <!-- Services Grid -->
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-8 md:mt-0">
-          <div class="space-y-4">
-            <p class="font-semibold mb-2">Formations</p>
-            <div class="space-y-2 text-gray-400">
-              <p class="hover:text-white cursor-pointer">Formation 1</p>
-              <p class="hover:text-white cursor-pointer">Formation 2</p>
-              <p class="hover:text-white cursor-pointer">Formation 3</p>
-            </div>
+          <div class="flex flex-col">
+            <a class="font-semibold mb-2" href="./index.html">Home</a>
+            <a class="font-semibold mb-2" href="./formation.html">Formations</a>
+            <a class="font-semibold mb-2" href="./services.html">Services</a>
+            <a class="font-semibold mb-2" href="./about.html">A Propos</a>
           </div>
           <div class="space-y-4">
-            <p class="font-semibold mb-2">Services</p>
+            <p class="font-semibold mb-2">Our Socials</p>
             <div class="space-y-2 text-gray-400">
-              <p class="hover:text-white cursor-pointer">Service 1</p>
-              <p class="hover:text-white cursor-pointer">Service 2</p>
-              <p class="hover:text-white cursor-pointer">Service 3</p>
+              <p class="hover:text-white cursor-pointer">Linkedin</p>
+              <p class="hover:text-white cursor-pointer">Facebook</p>
+              <p class="hover:text-white cursor-pointer">Instagram</p>
             </div>
           </div>
           <div class="space-y-4">
@@ -398,13 +425,16 @@
       <!-- Bottom Section -->
       <div class="mt-24 flex flex-col space-y-8">
         <!-- Logo -->
-        <h1 class="text-7xl sm:text-9xl lg:text-[180px] font-quicksand font-semibold text-center md:text-left">
+        <h1
+          class="text-7xl sm:text-9xl lg:text-[180px] font-quicksand font-semibold text-center md:text-left"
+        >
           Creasage
         </h1>
 
         <!-- Copyright and Links -->
         <div
-          class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 text-[#988C8D] text-sm">
+          class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 text-[#988C8D] text-sm"
+        >
           <div>
             <p>©2024 Creasage</p>
           </div>

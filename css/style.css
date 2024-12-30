@@ -235,17 +235,17 @@ body {
     top: 140px;
     background: linear-gradient(90deg, #FF12E7 0%, #2a1454 110.61%);
     border-radius: 50%;
-    animation: ball1 7s linear infinite;
+    animation: ball1 2s linear infinite;
     filter: blur(6px);
 }
 
-.groupx img {
+.groupx .bl5 {
     position: absolute;
     width: 45px;
     height: 45px;
     right: 15%;
     top: 70%;
-    animation: paper-ball 8s ease-in-out infinite;
+    animation: paper-ball 4s ease-in-out infinite;
 }
 
 .groupx span:nth-child(2) {
@@ -256,7 +256,7 @@ body {
     z-index: -1;
     filter: blur(0px);
     background: linear-gradient(90deg, #C4DFD9 0%, #56388e 110.61%);
-    animation: ball2 6s linear infinite;
+    animation: ball2 3s linear infinite;
 }
 
 .groupx span:nth-child(3) {
@@ -267,7 +267,7 @@ body {
     z-index: -1;
     filter: blur(0px);
     background: linear-gradient(90deg, #DEF9FA 0%, #9DEDF0 45%, #5CE1E6 70%, #33BBCF 100%);
-    animation: ball3 9s linear infinite;
+    animation: ball3 2s linear infinite;
 }
 
 .groupx span:nth-child(4) {
@@ -277,76 +277,77 @@ body {
     top: 80%;
     z-index: -1;
     background: #022358;
-    animation: ball4 5s linear infinite;
+    animation: ball4 2s linear infinite;
 }
 
 @keyframes ball1 {
     0% {
-        transform: rotate(0deg) translate(0);
+      scale: 0.8;
     }
     50% {
-        transform: rotate(180deg) translate(30px, 30px);
+        scale:1.2
     }
     100% {
-        transform: rotate(360deg) translate(0);
+      scale:0.8
     }
-}
-
-@keyframes ball2 {
+  }
+@keyframes ball1 {
     0% {
-        transform: rotate(0deg) translate(0);
+      scale: 0.8;
     }
     50% {
-        transform: rotate(-180deg) translate(-40px, 20px);
+        scale:1.2
     }
     100% {
-        transform: rotate(-360deg) translate(0);
+      scale:0.8
     }
-}
-
-@keyframes ball3 {
+  }
+  @keyframes ball2 {
     0% {
-        transform: rotate(0deg) translate(0);
+      scale: 0.8;
     }
     50% {
-        transform: rotate(180deg) translate(20px, -30px);
+        scale:1.2
     }
     100% {
-        transform: rotate(360deg) translate(0);
+      scale:0.8
     }
-}
-
+  }
+  @keyframes ball3 {
+    0% {
+      scale: 0.8;
+    }
+    50% {
+        scale:1.2
+    }
+    100% {
+      scale:0.8
+    }
+  }
 @keyframes ball4 {
     0% {
-        transform: rotate(0deg) translate(0);
+      scale: 0.8;
     }
     50% {
-        transform: rotate(-180deg) translate(30px, -20px);
+        scale:1.2
     }
     100% {
-        transform: rotate(-360deg) translate(0);
+      scale:0.8
     }
-}
+  }
 
-@keyframes paper-ball {
+  @keyframes paper-ball {
     0% {
-        transform: rotate(0deg) translate(0);
-    }
-    25% {
-        transform: rotate(90deg) translate(20px, 20px);
-    }
-    50% {
-        transform: rotate(180deg) translate(0, 40px);
-    }
-    75% {
-        transform: rotate(270deg) translate(-20px, 20px);
-    }
-    100% {
-        transform: rotate(360deg) translate(0);
-    }
-}
+        scale: 0.8;
+      }
+      50% {
+          scale:1.2
+      }
+      100% {
+        scale:0.8
+      }
+  }
 /* gradient */
-
 
 .section-gradient::before {
     content: "";

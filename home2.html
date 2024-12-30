@@ -1,0 +1,170 @@
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Navigation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: "#8B5CF6",
+                DEFAULT: "#022358",
+                dark: "#6D28D9",
+                blue: "#297DF0",
+              },
+            },
+
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              scroll: "scroll 20s linear infinite",
+            },
+            keyframes: {
+              scroll: {
+                "0%": { transform: "translateX(100%)" },
+                "100%": { transform: "translateX(-100%)" },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+            },
+            fontFamily: {
+              manrope: ['"Manrope"', "sans-serif"],
+              quicksand: ["Quicksand", "sans-serif"],
+            },
+          },
+        },
+        plugins: [
+          function ({ addUtilities }) {
+            addUtilities({
+              ".subhead": {
+                backgroundImage:
+                  "linear-gradient(268deg, #e6f3eb 1.92%, #e7f4e6 26.97%, #fefbf0 92.72%)",
+                display: "flex",
+                gap: "0.75rem",
+                alignItems: "center",
+                padding: "8px 16px",
+                borderRadius: "1rem",
+              },
+            });
+          },
+        ],
+      };
+    </script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const logo = document.querySelector('.logo-herox');
+            
+            gsap.to(logo, {
+                y: window.innerHeight * 1.5, // Move down by approximately the height needed to reach about section
+                scrollTrigger: {
+                    trigger: ".hero-section",
+                    start: "top top", // Start when hero section hits top
+                    end: "bottom center", // End when hero section bottom hits center
+                    scrub: 1, // Smooth scrolling animation
+                    markers: true // Remove in production
+                }
+            });
+        });
+    </script>
+      <style>
+        .logo-herox {
+            width: 200px; /* Adjust based on your logo size */
+            height: auto;
+            position: relative;
+            top: 50vh; /* Start in middle of hero section */
+            transform: translateY(-50%);
+            margin: 0 auto;
+        }
+    </style>
+  </head>
+  
+  <body class="transition-colors duration-300 dark:bg-gray-950 w-screen">
+
+
+  <div class=" mainthing w-screen ">
+    <section
+    class="z-40  relative hero-section min-h-screen pt-30 px-4 md:px-6 lg:px-8 dark:bg-gray-950"
+  >
+    <!-- Floating Elements -->
+
+    
+        <img src="./assets/images/heroLogo.png"  class="z-40 logo-herox" alt="" />
+     
+  </section>
+  
+    <section class="relative z-20 w-full h-full bg-red-300 font-quicksand">
+ 
+    </section>
+
+    <!-- About Section-->
+    <section
+      id="about"
+      class="min-h-screen relative w-full h-full bg-blue-200 z-20 py-24 md:py-32 sm:px-8 px-0 pl-8 sm:pl-8 dark:bg-gray-950"
+    >
+
+    </section>
+  </div>
+  <section
+  class="min-h-screen relative w-full h-full bg-purple-200 z-20 py-24 md:py-32 sm:px-8 px-0 pl-8 sm:pl-8 dark:bg-gray-950"
+>
+
+</section>
+  <script>
+
+    // Wait for the DOM to be ready
+    document.addEventListener('DOMContentLoaded', () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const logo = document.querySelector('.logo-herox');
+        
+        // Calculate the distance to the about section
+        const aboutSection = document.querySelector('#about');
+        const endPosition = aboutSection.offsetTop - 200; // 100px above the about section
+
+        gsap.to(logo, {
+            y: () => endPosition - window.innerHeight/2, // Subtract half viewport height to center logo
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".mainthing",
+                start: "top top",
+                end: `+=${endPosition}`,
+                scrub: 1, // Smooth scrolling animation
+                markers: true, // Remove in production
+                invalidateOnRefresh: true // Recalculate on window resize
+            }
+        });
+    });
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/faq-data.js"></script>
+    <script src="./js/faq.js"></script>
+    <script src="./js/gsap.js"></script>
+    <script src="./js/darkMode.js"></script>
+  </body>
+</html>
