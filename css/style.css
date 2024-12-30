@@ -192,7 +192,6 @@ body {
 
 /* section formation */
 
-.service-section{.courses-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}}
 .courses-container{max-width:1200px;margin:0 auto}
 .courses-container h2{font-size:2.5rem;color:#022358;margin-bottom:3rem}
 .courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
@@ -337,15 +336,15 @@ body {
   }
 
   @keyframes paper-ball {
-    0% {
-        scale: 0.8;
-      }
-      50% {
-          scale:1.2
-      }
-      100% {
-        scale:0.8
-      }
+     0% {
+      scale: 0.8;
+    }
+    50% {
+        scale:1.2
+    }
+    100% {
+      scale:0.8
+    }
   }
 /* gradient */
 
