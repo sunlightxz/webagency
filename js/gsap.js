@@ -594,3 +594,91 @@ ease: "power3.out",
 })
 
 
+
+
+
+//single
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Create a timeline for the hero section
+  const heroTimeline = gsap.timeline({
+      defaults: { duration: 1, ease: "power3.out" }
+  });
+
+  // Hero section animations
+  heroTimeline
+      .from(".bg-primary", {
+          opacity: 0,
+          y: 50,
+          duration: 1.2
+      })
+      .from(".bg-primary h1", {
+          opacity: 0,
+          y: 30,
+          duration: 1
+      }, "-=0.8")
+      .from(".bg-primary p", {
+          opacity: 0,
+          y: 20,
+          duration: 1
+      }, "-=0.8");
+
+  // Main content animations
+  gsap.from(".main-image", {
+      opacity: 0,
+      scale: 0.9,
+      duration: 1.2,
+      scrollTrigger: {
+          trigger: ".main-image",
+          start: "top 80%",
+      }
+  });
+
+  // Tabs animation
+  gsap.from(".tab-btn", {
+      opacity: 0,
+      x: -30,
+      stagger: 0.2,
+      duration: 0.8,
+      scrollTrigger: {
+          trigger: ".tab-btn",
+          start: "top 80%",
+      }
+  });
+
+  // Service cards animation
+  gsap.from(".sservice-card", {
+      opacity: 0,
+      y: 50,
+      stagger: 0.2,
+      duration: 1,
+      scrollTrigger: {
+          trigger: ".sservice-card",
+          start: "top 80%",
+      }
+  });
+
+  // Tab content animation
+  function animateTabContent(tabId) {
+      const content = document.querySelector(`#${tabId}`);
+      if (content) {
+          gsap.from(content, {
+              opacity: 0,
+              y: 20,
+              duration: 0.5,
+              ease: "power2.out"
+          });
+      }
+  }
+
+  // Add click listeners to tabs for content animation
+  document.querySelectorAll('.tab-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+          const tabId = e.target.getAttribute('data-tab');
+          animateTabContent(tabId);
+      });
+  });
+});
+
+
+
