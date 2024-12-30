@@ -206,107 +206,99 @@
 
     <section class="w-full mx-auto pb-8">
         <!-- Hero Section -->
-        <div class="bg-primary py-28 px-20 mb-8 flex flex-col justify-center items-center">
-            <h1 class="text-5xl text-white text-center font-bold mb-4">Accompagnement Stratégique</h1>
-            <p class="text-white text-xl text-center max-w-2xl">
+        <div class="bg-primary py-16 sm:py-20 lg:py-28 px-4 sm:px-8 lg:px-20 mb-8 flex flex-col justify-center items-center">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl text-white text-center font-bold mb-4">Accompagnement Stratégique</h1>
+            <p class="text-white text-base sm:text-lg lg:text-xl text-center max-w-2xl">
                 Des solutions personnalisées pour transformer vos défis digitaux en opportunités de croissance
             </p>
         </div>
 
         <!-- Main Content Grid -->
-     
-
-    - <div class="flex flex-col justify-center items-start max-w-7xl mx-auto p-8 lg:grid-cols-3 gap-8">
-            
-            <div class="w-full relative h-[500px]">
-                <img class="rounded-3xl w-full h-full bg-cover object-cover" src="./assets/images/servic2.avif" alt="">
+        <div class="flex flex-col justify-center items-start max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+            <!-- Image Section -->
+            <div class="w-full relative h-[300px] sm:h-[400px] lg:h-[500px] mb-8">
+                <img class="rounded-3xl w-full h-full object-cover" src="./assets/images/servic2.avif" alt="">
             </div>
 
-            <div class="flex gap-2 mb-8 mt-11">
-              <button class="tab-btn tab-active px-6 py-3 rounded-xl text-black" data-tab="overview">Overview</button>
-              <button class="tab-btn px-6 py-3 rounded-xl text-black bg-gray-100" data-tab="result">Services Inclus</button>
-              <button class="tab-btn px-6 py-3 rounded-xl text-black bg-gray-100" data-tab="instructor">Benefits Section</button>
-              <button class="tab-btn px-6 py-3 rounded-xl text-black bg-gray-100" data-tab="faqs">Process Section</button>
+            <!-- Tabs Section -->
+            <div class="flex flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8 mt-6 sm:mt-8">
+                <button class="tab-btn tab-active px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-black text-sm sm:text-base" data-tab="overview">Overview</button>
+                <button class="tab-btn px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-black bg-gray-100 text-sm sm:text-base" data-tab="result">Services Inclus</button>
+                <button class="tab-btn px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-black bg-gray-100 text-sm sm:text-base" data-tab="instructor">Benefits Section</button>
+                <button class="tab-btn px-4 sm:px-6 py-2 sm:py-3 rounded-xl text-black bg-gray-100 text-sm sm:text-base" data-tab="faqs">Process Section</button>
             </div>
-    
-            <div id="overview" class="tab-content">
-                <div class="border-t border-[#d1e0ff]  pt-10 ">
-                    <h2 class="text-4xl font-quicksand font-bold mb-10">Pourquoi choisir notre accompagnement stratégique?
+
+            <!-- Tab Content -->
+            <div id="overview" class="tab-content w-full">
+                <div class="border-t border-[#d1e0ff] pt-6 sm:pt-8 lg:pt-10">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-quicksand font-bold mb-6 sm:mb-8 lg:mb-10">
+                        Pourquoi choisir notre accompagnement stratégique?
                     </h2>
-                    <p class="text-gray-700 font-manrope dark:text-gray-100">
+                    <p class="text-gray-700 font-manrope dark:text-gray-100 text-sm sm:text-base">
                         Notre accompagnement stratégique repose sur une analyse approfondie de vos besoins et une mise
                         en œuvre de solutions adaptées pour maximiser votre impact digital.
                     </p>
-    
                 </div>
             </div>
-            <div id="result" class="tab-content hidden">
-                <h2 class="text-4xl border-t border-[#d1e0ff]  pt-10  font-quicksand font-bold mb-10">Ce que nous offrons</h2>
-                <p class="text-gray-700 font-manrope dark:text-gray-100 mb-6">
-                    Notre accompagnement stratégique repose sur une analyse approfondie de vos besoins et une mise
-                    en œuvre de solutions adaptées pour maximiser votre impact digital.
-                </p>
-                <section
-                        class="bg-gradient-to-br overflow-x-hidden bg-white dark:from-[#090a1c] dark:to-gray-950 text-black dark:text-white relative z-30 py-4 vision-section">
-                        <div class=" mx-auto ">
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div
-                                    class="bg-[#EBF3F9] dark:bg-[#111827] rounded-lg p-8 flex flex-col items-center text-center hover:bg-gray-200 dark:hover:bg-zinc-800 transition-colors duration-300">
-                                    <svg class="w-12 h-12 text-gray-800 dark:text-white mb-4" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M5 13l4 4L19 7"></path>
+
+            <div id="result" class="tab-content hidden w-full">
+                <div class="border-t border-[#d1e0ff] pt-6 sm:pt-8 lg:pt-10">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-quicksand font-bold mb-6 sm:mb-8">Ce que nous offrons</h2>
+                    <p class="text-gray-700 font-manrope dark:text-gray-100 text-sm sm:text-base mb-6">
+                        Notre accompagnement stratégique repose sur une analyse approfondie de vos besoins et une mise
+                        en œuvre de solutions adaptées pour maximiser votre impact digital.
+                    </p>
+
+                    <!-- Services Grid -->
+                    <section class="bg-gradient-to-br overflow-x-hidden bg-white dark:from-[#090a1c] dark:to-gray-950 text-black dark:text-white relative z-30 py-4 vision-section">
+                        <div class="mx-auto">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                                <!-- Service Card 1 -->
+                                <div class="bg-[#EBF3F9] dark:bg-[#111827] rounded-lg p-4 sm:p-6 lg:p-8 flex flex-col items-center text-center hover:bg-gray-200 dark:hover:bg-zinc-800 transition-colors duration-300">
+                                    <svg class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gray-800 dark:text-white mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"></path>
                                         <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"></rect>
                                     </svg>
-                                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Livraison
-                                        24H/48h</h3>
-                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Livraison à domicile partout au
-                                        Maroc</p>
+                                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Livraison 24H/48h</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Livraison à domicile partout au Maroc</p>
                                 </div>
-    
-                                <div
-                                    class="bg-[#EBF3F9] dark:bg-[#111827] rounded-lg p-8 flex flex-col items-center text-center hover:bg-gray-200 dark:hover:bg-zinc-800 transition-colors duration-300">
-                                    <svg class="w-12 h-12 text-gray-800 dark:text-white mb-4" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M3 10h18M7 15h.01M11 15h2M6 5h12a3 3 0 013 3v8a3 3 0 01-3 3H6a3 3 0 01-3-3V8a3 3 0 013-3z">
-                                        </path>
+
+                                <!-- Service Card 2 -->
+                                <div class="bg-[#EBF3F9] dark:bg-[#111827] rounded-lg p-4 sm:p-6 lg:p-8 flex flex-col items-center text-center hover:bg-gray-200 dark:hover:bg-zinc-800 transition-colors duration-300">
+                                    <svg class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gray-800 dark:text-white mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h.01M11 15h2M6 5h12a3 3 0 013 3v8a3 3 0 01-3 3H6a3 3 0 01-3-3V8a3 3 0 013-3z"></path>
                                     </svg>
-                                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Paiement</h3>
-                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Paiement à la livraison ou Virement
-                                        BC</p>
+                                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Paiement</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Paiement à la livraison ou Virement BC</p>
                                 </div>
-    
-                                <div
-                                    class="bg-[#EBF3F9] dark:bg-[#111827] rounded-lg p-8 flex flex-col items-center text-center hover:bg-gray-200 dark:hover:bg-zinc-800 transition-colors duration-300">
-                                    <svg class="w-12 h-12 text-gray-800 dark:text-white mb-4" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                                        </path>
+
+                                <!-- Service Card 3 -->
+                                <div class="bg-[#EBF3F9] dark:bg-[#111827] rounded-lg p-4 sm:p-6 lg:p-8 flex flex-col items-center text-center hover:bg-gray-200 dark:hover:bg-zinc-800 transition-colors duration-300">
+                                    <svg class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gray-800 dark:text-white mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                                     </svg>
-                                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Garantie</h3>
-                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Garantie 1 an pièces et main
-                                        d'œuvre.<br>SAV +212666998384</p>
+                                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">Garantie</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Garantie 1 an pièces et main d'œuvre.<br>SAV +212666998384</p>
                                 </div>
-    
                             </div>
                         </div>
-                </section>
+                    </section>
+                </div>
             </div>
-           
 
-            <div id="instructor" class="tab-content hidden">
-              <h2 class="text-2xl font-bold mb-4">Meet Your Instructor</h2>
-              <p>Instructor details here...</p>
+            <!-- Other tab contents follow the same pattern -->
+            <div id="instructor" class="tab-content hidden w-full">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4">Meet Your Instructor</h2>
+                <p class="text-sm sm:text-base">Instructor details here...</p>
             </div>
-            <div id="faqs" class="tab-content hidden">
-              <h2 class="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p>FAQs content here...</p>
+
+            <div id="faqs" class="tab-content hidden w-full">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-sm sm:text-base">FAQs content here...</p>
             </div>
-          </div>
-          
+        </div>
     </section>
+
     <!-- FAQ Section -->
     <section id="faq-section"
         class="bg-gradient-to-br from-gray-100 to-purple-100 dark:from-gray-950 dark:to-gray-900 py-24 relative z-30 overflow-hidden">
