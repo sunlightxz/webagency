@@ -471,13 +471,37 @@ gsap.from("#main-heading", {
 });
 
 // Animation for each step card
-gsap.from(".step-card", {
+gsap.from("#step-1", {
   scrollTrigger: {
     trigger: "#steps-container",
-    start: "top 80%",
+    start: "top 90%",
     toggleActions: "play none none reverse",
   },
   y: 100,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.2, // Delay between each card
+  ease: "power2.out",
+});
+gsap.from("#step-2", {
+  scrollTrigger: {
+    trigger: "#steps-container",
+    start: "top 90%",
+    toggleActions: "play none none reverse",
+  },
+  y: 0,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.2, // Delay between each card
+  ease: "power2.out",
+});
+gsap.from("#step-3", {
+  scrollTrigger: {
+    trigger: "#steps-container",
+    start: "top 90%",
+    toggleActions: "play none none reverse",
+  },
+  y: -100,
   opacity: 0,
   duration: 1,
   stagger: 0.2, // Delay between each card

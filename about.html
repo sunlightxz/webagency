@@ -19,6 +19,9 @@
                 DEFAULT: "#022358",
                 dark: "#6D28D9",
                 blue: "#297DF0",
+                bluea : "#217AFA",
+                pink: '#c891f9',
+                gradient :'#0F4281'
               },
             },
 
@@ -70,7 +73,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
   </head>
-  <body class="transition-colors duration-300 dark:bg-gray-950 w-screen">
+  <body class="transition-colors duration-300 dark:bg-primary w-screen">
     <div class="relative overflow-hidden w-full">
       <div
         class="floating-shape shape1 hidden sm:block absolute top-0 left-0 bg-blue-500 rounded-full w-10 h-10 animate-bounce"
@@ -292,18 +295,18 @@
     </nav>
     <!--seoo-->
     <section
-      class="mx-auto z-30 h-[90vh] w-screen relative bg-primary text-white flex justify-center items-center"
+      class="mx-auto z-30 h-[90vh] w-screen relative bg-primary dark:bg-primary-pink text-white dark:text-black flex justify-center items-center"
     >
       <div class="kkk"></div>
       <div class="max-w-3xl relative mx-auto text-center seo-content">
         <h2 class="text-5xl font-bold mb-6">Qui Sommes-Nous ?</h2>
-        <p class="text-xl text-gray-300 mb-12">
+        <p class="text-xl text-gray-300 dark:text-black  mb-12">
           Une équipe passionnée par la création de contenu et la stratégie
           digitale, dédiée à votre succès dans le monde numérique.
         </p>
         <a
           href="#consultation"
-          class="inline-flex items-center bg-white text-primary px-8 py-3 rounded-2xl font-bold hover:bg-purple-100 transition-colors"
+          class="inline-flex items-center bg-white dark:text-black  text-primary px-8 py-3 rounded-2xl font-bold hover:bg-purple-100 transition-colors"
         >
           Contactez-nous
           <svg
@@ -332,7 +335,7 @@
 
       <div class="absolute bottom-0 overflow-x-hidden z-10 w-screen left-0">
         <svg
-          class="h-full w-full dark:fill-[#030712] fill-white"
+          class="h-full w-full dark:fill-primary fill-white"
           xmlns="http://www.w3.org/2000/svg"
           width="3000"
           height="400"
@@ -358,7 +361,7 @@
     <!-- About Section-->
     <section
       id="about"
-      class="min-h-screen relative z-30 py-24 md:py-32 sm:px-8 px-0 pl-8 sm:pl-8 dark:bg-gray-950 overflow-hidden"
+      class="min-h-screen relative z-30 py-24 md:py-32 sm:px-8 px-0 pl-8 sm:pl-8 dark:bg-primary overflow-hidden"
     >
       <div
         class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 pt-5"
@@ -509,12 +512,11 @@
       </div>
     </section>
 
-    <!-- Our vision-->
+    <!-- Our vision
     <section
-      class="bg-gradient-to-br overflow-x-hidden bg-white dark:from-[#090a1c] dark:to-gray-950 text-black dark:text-white relative z-30 py-4 vision-section"
+      class="bg-gradient-to-br overflow-x-hidden bg-white dark:from-primary dark:to-gray-900 text-black dark:text-white relative z-30 py-4 vision-section"
     >
       <div class="max-w-7xl px-8 mx-auto">
-        <!-- Logo Slider -->
         <div class="swiper scrolling-container logo-swiper mt-16">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -576,10 +578,10 @@
         </div>
       </div>
     </section>
-
+-->
     <!--logosss-->
     <section 
-    class="bg-gradient-to-br overflow-x-hidden bg-white dark:from-[#090a1c] dark:to-gray-950 text-black dark:text-white relative z-30 py-4 vision-section">
+    class="bg-gradient-to-br overflow-x-hidden bg-white dark:to-primary dark:from-primary-blue text-black dark:text-white relative z-30 py-4 vision-section">
     <div class="container mx-auto px-8">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <!-- Delivery Card -->
@@ -622,7 +624,7 @@
       </div>
     </section>
     <!--Our values-->
-    <section class="bg-white dark:bg-gray-950 relative section-gradient z-30 p-8">
+    <section class="bg-white dark:bg-primary relative section-gradient z-30 p-8">
       <div class="container py-24 mx-auto max-w-7xl">
         <!-- Header Section -->
         <div class="flex flex-col justify-center items-center">
@@ -763,7 +765,7 @@
     </section>
 
     <!--Our team-->
-    <section class="bg-white dark:bg-gray-950 py-20">
+    <section class="bg-white dark:bg-primary py-20">
       <div class="container mx-auto max-w-7xl px-4">
         <!-- Header Section -->
         <div class="flex flex-col justify-center items-center">
@@ -785,7 +787,7 @@
             >
             Meet Your
 
-              <span class="text-primary dark:text-blue-400">Passionate</span>Experts
+              <span class="text-primary dark:text-primary-bluea">Passionate</span>Experts
             </h2>
             <p class="max-w-screen font-manrope text-gray-600 dark:text-gray-300 text-center">
               The Values That Drive Everything We Do
@@ -921,7 +923,7 @@
 
     <!-- Service Section-->
     <section
-      class="services-section section-gradient z-30 bg-gradient-to-br from-gray-100 to-purple-100 dark:from-[#090a1c] dark:to-gray-950 relative py-24"
+      class="services-section section-gradient z-30 bg-gradient-to-br from-gray-100 to-purple-100 dark:from-gray-950 dark:to-primary relative py-24"
     >
       <div
         class="services-container shape max-w-7xl mx-auto px-8 flex flex-col justify-center items-center"
@@ -945,7 +947,7 @@
               class="text-4xl md:text-5xl text-black font-semibold text-center dark:text-white font-quicksand mb-6"
             >
             Notre Mission Chez 
-              <span class="text-primary-dark">CreaSage. </span>
+              <span class="text-primary-bluea">CreaSage. </span>
             </h2>
             <p class="max-w-screen-sm text-center">
               Nous aidons les entreprises à réussir dans le digital grâce à un contenu engageant et des stratégies innovantes. Notre objectif est de transformer vos idées en opportunités et d'ouvrir de nouvelles perspectives grâce à des solutions sur mesure.
@@ -1170,7 +1172,7 @@
     </section>
 
     <!--Contact-->
-    <section class="bg-gradient-to-br from-gray-100 to-purple-100 dark:from-[#090a1c] dark:to-gray-950">
+    <section class="bg-gradient-to-br from-gray-100 to-purple-100 dark:from-gray-950 dark:to-primary ">
       <div class="container mx-auto px-4 py-16 transition-colors duration-200">
         <div class="text-center mb-12">
           <div class="flex justify-center items-center mb-4">
@@ -1260,7 +1262,7 @@
                 <input type="checkbox" class="rounded bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-blue-500 focus:ring-blue-500" id="subscribe">
                 <label for="subscribe" class="ml-2 text-sm text-gray-600 dark:text-gray-400">Subscribe to receive the latest news and exclusive offers</label>
               </div>
-              <button type="submit" class="w-full bg-primary hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white py-3 px-6 rounded-md transition-colors">
+              <button type="submit" class="w-full bg-primary hover:bg-blue-700 dark:bg-primary-pink dark:hover:bg-purple-500 text-white py-3 px-6 rounded-md transition-colors">
                 Send Message
               </button>
             </form>
@@ -1271,14 +1273,14 @@
 
     <!---->
     <section
-      class="mx-auto z-30 py-28 w-screen relative bg-primary text-white flex justify-center items-center"
+      class="mx-auto z-30 py-28 w-screen relative bg-primary dark:bg-primary-pink text-white  dark:text-black flex justify-center items-center"
     >
       <div class="kkk"></div>
       <div class="max-w-3xl relative mx-auto text-center seo-content">
         <h2 class="text-5xl font-bold mb-6">
           Ready to Take Your SEO to The Next Level
         </h2>
-        <p class="text-xl text-gray-300 mb-12">
+        <p class="text-xl text-gray-300 mb-12 dark:text-black">
           Prenez contact avec notre équipe et découvrez comment nous pouvons
           transformer vos idées en réalité digitale.
         </p>
@@ -1315,7 +1317,7 @@
     <!-- FAQ Section -->
     <section
       id="faq-section"
-      class="bg-gradient-to-br from-gray-100 to-purple-100 dark:from-gray-950 dark:to-gray-900 py-24 relative z-30 overflow-hidden"
+      class="bg-gradient-to-br from-gray-100 to-purple-100 dark:from-primary dark:to-gray-900 py-24 relative z-30 overflow-hidden"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="w-full flex flex-col lg:flex-row gap-12">
