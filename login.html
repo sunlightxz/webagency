@@ -22,7 +22,9 @@
                 blue: "#297DF0",
                 bluea : "#217AFA",
                 pink: '#6D29D9',
-                gradient :'#0F4281'
+                gradient :'#0F4281',
+                bdark:"#071539"
+
               },
             },
 
@@ -188,7 +190,7 @@
 
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-primary">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-primary-bdark">
             <a href="./index.html" class="block px-3 py-2 text-purple-600 dark:text-purple-400 font-medium">Home</a>
 
             <a href="./services.html"
@@ -206,8 +208,8 @@
         </div>
     </div>
     </nav>
-    <section class="min-h-screen bg-white dark:bg-primary">
-        <div class="flex min-h-screen">
+    <section class="min-h-[70vh] bg-white dark:bg-primary-bdark">
+        <div class="flex h-full">
             <!-- Left side - Form -->
             <div class="w-full lg:w-1/2 p-8 lg:p-12 flex flex-col">
                 <!-- Logo -->
@@ -216,7 +218,7 @@
                 <div class="max-w-md w-full mx-auto">
                   
                     <h1 class="text-3xl font-bold mb-2">Welcome Back</h1>
-                    <p class="text-gray-600 mb-8">Fill your email address and password to sign in</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">Fill your email address and password to sign in</p>
     
                     <form id="loginForm" class="space-y-6">
                         <div>
@@ -232,7 +234,7 @@
                         </div>
     
                         <div class="text-right">
-                            <a href="#" class="text-sm text-primary hover:underline">Forgot your password?</a>
+                            <a href="#" class="text-sm text-primary dark:text-gray-300 hover:underline">Forgot your password?</a>
                         </div>
     
                         <button type="submit" 
@@ -241,7 +243,7 @@
                         </button>
     
                         <button type="button" 
-                            class="w-full border border-gray-200 bg-white py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors">
+                            class="w-full border border-gray-200 bg-white dark:text-black py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors">
                             <svg class="w-5 h-5" viewBox="0 0 24 24">
                                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                                 <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -257,7 +259,7 @@
                     </div>
     
                     <div class="text-center mt-6">
-                        <a href="./singup.html" class="text-sm text-primary hover:underline">Create a new account.</a>
+                        <a href="./singup.html" class="text-sm text-primary dark:text-gray-200  font-semibold border-b border-black dark:border-white py-2 hover:underline ">Create a new account.</a>
                     </div>
                 </form>
     
@@ -265,109 +267,13 @@
             </div>
     
             <!-- Right side - Image -->
-            <div class="hidden lg:block w-1/2">
+            <div class="hidden lg:block w-1/2 object-contain">
                 <img src="./assets/images/login.png" alt="Customer service representative" 
                     class="w-full h-full object-cover">
             </div>
         </div>
     </section>
-    <footer class="bg-black z-30 mt-8 relative text-white py-16">
-      <div
-        class="wave absolute lg:top-[-145px] md:top-[-115px] sm:top-[-85px] top-[-55px] overflow-x-hidden z-40 w-screen left-0"
-      >
-        <svg
-          class="h-full w-full fill-black"
-          xmlns="http://www.w3.org/2000/svg"
-          width="3000"
-          height="400"
-          viewBox="0 180 2500 200"
-        >
-          <path
-            class="st1"
-            d="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250"
-          >
-            <animate
-              attributeName="d"
-              dur="5s"
-              values="M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250;
-                      M 0 250 C 400 50 400 400 3000 250 L 3000 550 L 0 550 L 0 250;
-                      M 0 250 C 1200 400 1200 50 3000 250 L 3000 550 L 0 550 L 0 250"
-              repeatCount="indefinite"
-            ></animate>
-          </path>
-        </svg>
-      </div>
-      <div class="container mx-auto px-4">
-        <!-- Grid container -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <!-- Newsletter Section -->
-          <div class="max-w-md">
-            <h2 class="text-xl md:text-2xl font-light mb-6 font-manrope">
-              There is only one newsletter that cover everything about
-              communication, creativity, and impact. Subscribe now!
-            </h2>
-            <div class="flex border-b border-white mt-9">
-              <input
-                type="email"
-                id="emailInput"
-                placeholder="Email Address"
-                class="bg-transparent w-full py-2 focus:outline-none text-white"
-              />
-              <button id="subscribeBtn" class="ml-4 text-2xl">→</button>
-            </div>
-          </div>
-
-          <!-- Services Grid -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-8 md:mt-0">
-            <div class="flex flex-col">
-              <a class="font-semibold mb-2" href="./index.html">Home</a>
-              <a class="font-semibold mb-2" href="./formation.html">Formations</a>
-              <a class="font-semibold mb-2" href="./services.html">Services</a>
-              <a class="font-semibold mb-2" href="./about.html">A Propos</a>
-            </div>
-            <div class="space-y-4">
-              <p class="font-semibold mb-2">Our Socials</p>
-              <div class="space-y-2 text-gray-400">
-                <p class="hover:text-white cursor-pointer">Linkedin</p>
-                <p class="hover:text-white cursor-pointer">Facebook</p>
-                <p class="hover:text-white cursor-pointer">Instagram</p>
-              </div>
-            </div>
-            <div class="space-y-4">
-              <p class="font-semibold mb-2">A propos</p>
-              <div class="space-y-2 text-gray-400">
-                <p class="hover:text-white cursor-pointer">Notre histoire</p>
-                <p class="hover:text-white cursor-pointer">Contact</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom Section -->
-        <div class="mt-24 flex flex-col space-y-8">
-          <!-- Logo -->
-          <h1
-            class="text-7xl sm:text-9xl lg:text-[160px] font-quicksand font-semibold text-center md:text-left"
-          >
-            Creasage
-          </h1>
-
-          <!-- Copyright and Links -->
-          <div
-            class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 text-[#988C8D] text-sm"
-          >
-            <div>
-              <p>©2024 Creasage</p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
-              <a href="#" class="hover:underline">Privacy Policy</a>
-              <a href="#" class="hover:underline">Cookie Preferences</a>
-              <a href="#" class="hover:underline">Credits</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+   
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
