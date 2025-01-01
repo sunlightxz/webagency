@@ -293,16 +293,239 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
   
-    sectionScaleTl.fromTo(
-      ".services-section",
-      { scale: 0.9, opacity: 0.8 },
-      { scale: 1, opacity: 1 }
-    );
+ 
   
    
     
 });
+//vision section
+document.addEventListener('DOMContentLoaded', function () {
+  gsap.registerPlugin(ScrollTrigger);
 
+  // GSAP Animations only for larger screens (larger than 768px)
+  if (window.innerWidth >= 768) {  // md breakpoint (768px)
+      // Initial section animation with background effect
+      const sectionTL = gsap.timeline({
+          scrollTrigger: {
+              trigger: '.award-section',
+              start: 'top 80%',
+              end: 'bottom center',
+              toggleActions: "play none none reverse"
+          }
+      });
+
+      sectionTL
+          .from('.award-section', {
+              opacity: 0,
+              duration: 1,
+              ease: "power3.out"
+          })
+          .from('.award-section .bg-gradient', {
+              opacity: 0,
+              scale: 1.2,
+              duration: 1.5,
+              ease: "power2.out"
+          }, "-=0.5");
+
+      // Enhanced animation for card 1
+      gsap.from('.award-card.one', {
+          scrollTrigger: {
+              trigger: '.award-section',
+              start: 'top 70%',
+              end: 'bottom center',
+              toggleActions: "play none none reverse"
+          },
+          opacity: 0,
+          x: -100,
+          y: 50,
+          rotation: -5,
+          duration: 1.2,
+          ease: "back.out(1.7)"
+      });
+
+      // Enhanced animation for card 2
+      gsap.to('.award-card.two', {
+          scrollTrigger: {
+              trigger: '.award-section',
+              start: 'top-=5% top',
+              end: '60% bottom',
+              scrub: 1,
+          },
+          x: '-105.2%',
+          rotation: 2,
+          ease: 'none',
+      });
+
+      // Enhanced animation for card 3
+      gsap.to('.award-card.three', {
+          scrollTrigger: {
+              trigger: '.award-section',
+              start: 'top top',
+              end: 'bottom bottom',
+              scrub: 1,
+          },
+          x: '-205.5%',
+          rotation: -2,
+          ease: 'none',
+      });
+
+      // Enhanced hover animations for award cards
+      document.querySelectorAll('.award-card').forEach(card => {
+          const cardContent = card.querySelectorAll('h3, p, img, svg');
+          
+          card.addEventListener('mouseenter', () => {
+              gsap.to(card, {
+                  y: -15,
+                  scale: 1.03,
+                  rotation: 0,
+                  duration: 0.4,
+                  ease: "power2.out",
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
+              });
+
+              gsap.to(cardContent, {
+                  y: -5,
+                  duration: 0.3,
+                  stagger: 0.05,
+                  ease: "power2.out"
+              });
+          });
+
+          card.addEventListener('mouseleave', () => {
+              gsap.to(card, {
+                  y: 0,
+                  scale: 1,
+                  rotation: card.classList.contains('two') ? 2 : 
+                           card.classList.contains('three') ? -2 : 0,
+                  duration: 0.4,
+                  ease: "power2.inOut",
+                  boxShadow: "0 0 0 rgba(0,0,0,0)"
+              });
+
+              gsap.to(cardContent, {
+                  y: 0,
+                  duration: 0.3,
+                  stagger: 0.02,
+                  ease: "power2.inOut"
+              });
+          });
+      });
+
+      // Enhanced content animations
+      gsap.from('.award-card h3', {
+          scrollTrigger: {
+              trigger: '.award-section',
+              start: 'top 70%',
+              toggleActions: "play none none reverse"
+          },
+          opacity: 0,
+          y: 30,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power3.out"
+      });
+
+      gsap.from('.award-card p', {
+          scrollTrigger: {
+              trigger: '.award-section',
+              start: 'top 70%',
+              toggleActions: "play none none reverse"
+          },
+          opacity: 0,
+          y: 20,
+          duration: 0.8,
+          stagger: 0.3,
+          ease: "power2.out"
+      });
+
+      // Enhanced icon animations
+      gsap.from('.award-card img, .award-card svg', {
+          scrollTrigger: {
+              trigger: '.award-section',
+              start: 'top 70%',
+              toggleActions: "play none none reverse"
+          },
+          opacity: 0,
+          scale: 0,
+          rotation: 180,
+          duration: 1.2,
+          stagger: 0.2,
+          ease: "back.out(1.7)"
+      });
+
+  } else {
+      // Enhanced mobile animations
+      const mobileTL = gsap.timeline({
+          scrollTrigger: {
+              trigger: '.award-section',
+              start: 'top 80%',
+              toggleActions: "play none none reverse"
+          }
+      });
+
+      mobileTL
+          .from('.award-section', {
+              opacity: 0,
+              duration: 0.8
+          })
+          .from('.award-card', {
+              opacity: 0,
+              y: 50,
+              duration: 0.8,
+              stagger: 0.2,
+              ease: "power2.out"
+          })
+          .from('.award-card img, .award-card svg', {
+              opacity: 0,
+              scale: 0,
+              duration: 0.6,
+              stagger: 0.1,
+              ease: "back.out(1.7)"
+          }, "-=0.4")
+          .from('.award-card h3, .award-card p', {
+              opacity: 0,
+              y: 20,
+              duration: 0.6,
+              stagger: 0.1,
+              ease: "power2.out"
+          }, "-=0.4");
+  }
+  const visionTimeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".award-section",
+        start: "top 70%",
+        // markers: true, // Enable for debugging
+    }
+});
+
+// Animate the left side content
+visionTimeline
+    .from(".award-content .subhead", {
+        opacity: 0,
+        x: -50,
+        duration: 1,
+        ease: "power3.out"
+    })
+    .from(".award-content h1", {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        ease: "power3.out"
+    }, "-=0.7")
+    .from(".award-content p", {
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        ease: "power3.out"
+    }, "-=0.7")
+    .from(".award-content button", {
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        ease: "power3.out"
+    }, "-=0.5");
+
+});
 
 //course section
 
