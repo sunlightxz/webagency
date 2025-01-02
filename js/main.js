@@ -127,9 +127,9 @@ function handleScroll() {
     // Scrolling up or at top - show navbar
     navbar.style.transform = 'translateY(0)';
     if (scrollTop > 10) {
-      navbar.classList.add('shadow-md', 'bg-white/95', 'dark:bg-black/95');
+      navbar.classList.add('shadow-md', 'backdrop-blur', 'dark:backdrop-blur');
     } else {
-      navbar.classList.remove('shadow-md', 'bg-white/95', 'dark:bg-black/95');
+      navbar.classList.remove('shadow-md', 'backdrop-blur', 'dark:backdrop-blur');
       navbar.classList.add('shadow-sm');
     }
   }

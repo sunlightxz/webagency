@@ -908,3 +908,17 @@ footer input::placeholder {
     background-color: #fce7f3;
     border-radius: 0 0 8px 8px;
 }
+
+.banner-gradient {
+    z-index: -1;
+    background-image: linear-gradient(166deg, #C794F6, blue);
+    opacity: .6;
+    filter: blur(160px);
+    transform-style: preserve-3d;
+    border-radius: 200px;
+    width: 700px;
+    height: 400px;
+    position: absolute;
+    inset: auto auto 30% 0;
+    transform: skew(38deg, 7deg) rotateX(31deg) rotateY(0) rotateZ(34deg) translate(0);
+}
