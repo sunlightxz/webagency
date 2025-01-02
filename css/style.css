@@ -373,6 +373,17 @@ body {
     margin-top: -3%;
     opacity: 0.5;
 }
+.hero-gradient::after{
+    bottom: 10%;
+    left: 0;
+    width: 750px;
+    height: 320px;
+    filter: blur(150px);
+    margin-right: 2%;
+    margin-top: -3%;
+    opacity: 0.5;
+
+}
 .contact-section::before{
     right: 50%;}
 .client-section::before {
@@ -775,6 +786,7 @@ footer input::placeholder {
         display: none;
     }
 }
+
 
 .arrow-about{
     animation: scall 1.5s infinite linear;
