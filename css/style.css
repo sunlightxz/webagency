@@ -490,7 +490,7 @@ body {
     position: absolute;
     left: 120%;
     top: 50%;
-    background-color: rgb(226, 226, 226);
+    background-color: gray;
     opacity: 0.4;
     width: 25vw;
     height: 1px;
@@ -501,7 +501,7 @@ body {
     position: absolute;
     right: 120%;
     top: 50%;
-    background-color: rgb(226, 226, 226);
+    background-color: gray;
     opacity: 0.4;
     width: 25vw;
     height: 1px;
